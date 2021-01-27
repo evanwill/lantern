@@ -1,0 +1,186 @@
+/*  This file overrides styles set by the UIKit library (`assets/uikit.css`). It's really just the same styles copied over and applied to directly elements, ids, and classes produced by Pandoc */
+
+#TOC ul {
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+
+#TOC ul li {
+    display: block;
+    text-decoration: none;
+    padding: 5px 0;
+    margin: 5px 0;
+}
+
+#TOC ul ul {
+    padding-left: 1rem;
+    font-size: 0.875rem;
+}
+
+.objectives {
+    position: relative;
+    box-sizing: border-box;
+    transition: box-shadow 0.1s ease-in-out;
+    background: #222;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    display: flow-root;
+    padding: 30px 30px;
+}
+
+.objectives ul {
+    list-style: square;
+}
+
+ul > * > :last-child {
+    margin-bottom: 0;
+}
+  /*
+   * Style
+   */
+ul > :nth-child(n+2),
+ul > * > ul {
+    margin-top: 10px;
+}
+
+pre {
+    color: #666;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    overflow: auto;
+    padding: 25px;
+    border: 0 solid #e5e5e5;
+    border-radius: 0;
+    background: #f8f8f8;
+}
+
+pre code {
+    font-weight: bold;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.exercise {
+  position: relative;
+  box-sizing: border-box;
+  transition: box-shadow 0.1s ease-in-out;
+  background: #1e87f0;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  display: flow-root;
+  padding: 30px 30px;
+}
+
+.exercise h4 {
+  color: #fff;
+  font-weight: bold;
+}
+
+details {
+  position: relative;
+  box-sizing: border-box;
+  transition: box-shadow 0.1s ease-in-out;
+  display: flow-root;
+  padding: 30px 30px;
+  background: #222;
+  color: #fff;
+}
+
+details summary {
+  display: flow-root;
+  padding: 15px 30px;
+  font-weight: bold;
+}
+
+.summary {
+  position: relative;
+  box-sizing: border-box;
+  transition: box-shadow 0.1s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  display: flow-root;
+  padding: 30px 30px;
+  background: #f8f8f8;
+}
+
+/* ========================================================================
+   Component: Table
+ ========================================================================== */
+/*
+ * 1. Remove most spacing between table cells.
+ * 2. Behave like a block element
+ * 3. Style
+ */
+ table {
+  /* 1 */
+  border-collapse: collapse;
+  border-spacing: 0;
+  /* 2 */
+  width: 100%;
+  /* 3 */
+  margin-bottom: 20px;
+}
+/* Add margin if adjacent element */
+* + table {
+  margin-top: 20px;
+}
+
+/* Header cell
+ ========================================================================== */
+/*
+ * 1. Style
+ */
+table th {
+  padding: 16px 12px;
+  text-align: left;
+  vertical-align: bottom;
+  /* 1 */
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: #999;
+  text-transform: uppercase;
+}
+/* Cell
+ ========================================================================== */
+table td {
+  padding: 16px 12px;
+  vertical-align: top;
+}
+/*
+ * Remove margin from the last-child
+ */
+table td > :last-child {
+  margin-bottom: 0;
+}
+
+/* Caption
+ ========================================================================== */
+table caption {
+  font-size: 0.875rem;
+  text-align: left;
+  color: #999;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+table caption::before {
+    content: "Table: "
+  }
+
+/* Style modifiers
+ ========================================================================== */
+/*
+ * Divider
+ */
+table > tr:not(:first-child),
+table > :not(:first-child) > tr,
+table > :first-child > tr:not(:first-child) {
+    border-top: 1px solid #e5e5e5;
+ }
+/*
+ * Hover
+ */
+table > tr:hover,
+table tbody tr:hover {
+  background: #ffd;
+}

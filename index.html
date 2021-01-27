@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="generator" content="pandoc" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+                <meta name="author" content="Chris Diaz" />
+                <meta name="author" content="Lauren McKeen McDonald" />
+                        <meta name="dcterms.date" content="2020-12-10" />
+                        <meta name="keywords" content="pandoc, book, my-book, etc" />
+                <title>Lantern</title>
+        <link rel="stylesheet" type="text/css" href="uikit.css">
+        <link rel="stylesheet" type="text/css" href="book.css">
+        <script src="uikit.min.js" defer></script>
+        <script src="uikit-icons.min.js" defer></script>
+                <!-- Bibliographic Metadata -->
+        <meta name="citation_title" content="Lantern">
+        <meta name="citation_year" content="">
+        <meta name="citation_language" content="en-US">
+                <meta name="citation_publisher" content="Northwestern University Libraries">
+        <meta name="citation_isbn" content="">
+                <meta name="citation_author" content="Chris Diaz">
+                <meta name="citation_author" content="Lauren McKeen McDonald">
+                                        <!-- Open Graph Metadata -->
+        <meta property="og:title" content="Lantern" />
+        <meta property="og:description" content="<p>Lantern is a digital publishing toolkit for open textbooks. No experience with programming or coding is necessary. Lantern provides instructional guides and re-usable document templates needed for making open textbooks with free and open source software. With Lantern, we hope to minimize the technical maintenance costs of building, distributing, and preserving open textbooks.</p>" />
+        <meta property="og:image" content="cover.png" />
+        <!-- Twitter Card Metadata -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Lantern" />
+        <meta name="twitter:description" content="<p>Lantern is a digital publishing toolkit for open textbooks. No experience with programming or coding is necessary. Lantern provides instructional guides and re-usable document templates needed for making open textbooks with free and open source software. With Lantern, we hope to minimize the technical maintenance costs of building, distributing, and preserving open textbooks.</p>" />
+        <meta name="twitter:image" content="cover.png" />
+        <!--[if lt IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+        <![endif]-->
+            </head>
+    <body>
+    
+    <header>
+        <div class="uk-container">
+            <nav id="navbar" class="uk-navbar uk-background-default" uk-sticky>
+                <div class="nav-overlay uk-navbar-left">
+                    <a class="uk-navbar-item" href="#">
+                        <h1>Lantern</h1>
+                    </a>
+                </div>
+                <div class="nav-overlay uk-navbar-right">
+                    <a uk-icon="menu" href="#toc" uk-toggle></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div id="toc" uk-offcanvas="mode: slide; flip: true">
+        <div class="uk-offcanvas-bar">
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+                            <nav id="TOC" role="doc-toc">
+                                <h2 id="toc-title">Contents</h2>
+                                <ul>
+                                <li><a href="#introduction">Introduction</a>
+                                <ul>
+                                <li><a href="#motivation">Motivation</a></li>
+                                <li><a href="#credits">Credits</a></li>
+                                </ul></li>
+                                <li><a href="#get-started">Get Started</a>
+                                <ul>
+                                <li><a href="#working-with-text">Working with Text</a></li>
+                                <li><a href="#document-processing">Document Processing</a></li>
+                                </ul></li>
+                                <li><a href="#content">Content</a>
+                                <ul>
+                                <li><a href="#most-remediation-required-is-the-headings-so-fix-the-headings-in-word">Most remediation required is the headings, so fix the headings in word</a></li>
+                                <li><a href="#metadata">Metadata</a>
+                                <ul>
+                                <li><a href="#example">Example</a></li>
+                                <li><a href="#tips-for-writing-yaml">Tips for Writing YAML</a></li>
+                                </ul></li>
+                                <li><a href="#manuscripts">Manuscripts</a>
+                                <ul>
+                                <li><a href="#converting-microsoft-word-files">Converting Microsoft Word Files</a></li>
+                                </ul></li>
+                                </ul></li>
+                                <li><a href="#online-publishing-with-github">Online Publishing with GitHub</a>
+                                <ul>
+                                <li><a href="#github">GitHub</a></li>
+                                <li><a href="#github-pages">GitHub Pages</a></li>
+                                <li><a href="#self-hosted">Self-Hosted</a>
+                                <ul>
+                                <li><a href="#pandoc">Pandoc</a></li>
+                                <li><a href="#digital-production-with-pandoc-and-make">Digital Production with Pandoc and Make</a></li>
+                                </ul></li>
+                                </ul></li>
+                                <li><a href="#desktop-publishing-with-pandoc-and-github">Desktop Publishing with Pandoc and GitHub</a>
+                                <ul>
+                                <li><a href="#computer-terminal">Computer Terminal</a></li>
+                                <li><a href="#using-pandoc">Using Pandoc</a></li>
+                                <li><a href="#microsoft-word-documents">Microsoft Word Documents</a></li>
+                                <li><a href="#adapting-and-remixing-open-content">Adapting and Remixing Open Content</a>
+                                <ul>
+                                <li><a href="#oer-source-files">OER Source Files</a></li>
+                                <li><a href="#basic-typesetting-with-markdown-and-latex">Basic Typesetting with Markdown and LaTeX</a></li>
+                                </ul></li>
+                                </ul></li>
+                                <li><a href="#custom-blocks">Custom Blocks</a></li>
+                                </ul>
+                </nav>
+                    </div>
+    </div>
+
+    <section class="uk-section uk-section-small">
+        <div class="uk-container uk-container-small">
+            <div class="uk-grid uk-grid-medium uk-flex uk-flex-middle">
+                <div class="uk-background-primary uk-light uk-padding uk-panel uk-text-small">
+                    <h2>Lantern</h2>
+                                        <p class="uk-text-bold">Chris Diaz, Lauren McKeen McDonald</p>
+                    <p><p>Lantern is a digital publishing toolkit for open textbooks. No experience with programming or coding is necessary. Lantern provides instructional guides and re-usable document templates needed for making open textbooks with free and open source software. With Lantern, we hope to minimize the technical maintenance costs of building, distributing, and preserving open textbooks.</p></p>
+                    <ul uk-accordion>
+                        <li>
+                            <a class="uk-accordion-title" href="#">Details</a>
+                            <div class="uk-accordion-content">
+                                <dl class="uk-description-list">
+                                                                        <dt>Publish Date</dt>
+                                    <dd>2020-12-10</dd>
+                                                                                                            <dt>License</dt>
+                                    <dd>Creative Commons Attribution (CC BY) 4.0 International</dd>
+                                                                                                        </dl>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="uk-section uk-article">
+        <div class="uk-container uk-container-small">
+            <h1 id="introduction">Introduction</h1>
+            <p>This book introduces <strong>Lantern</strong> to publishers of Open Educational Resources (OER). Lantern is a publishing workflow that uses <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> and <a href="https://pandoc.org">Pandoc</a> to make OER available online in HTML, PDF, EPUB, and DOCX formats. Lantern follows open source software convensions by utilizing <a href="https://git-scm.com/">Git</a> repositories for version control, source packaging, reproducibility, and adaptability. Since open textbooks are intended to be remixed and adaptable, Lantern makes it easy to publish the source material alongside the HTML and PDF versions.</p>
+            <p>Lantern is a <a href="https://go-dh.github.io/mincomp/about/">minimal computing</a> approach to help open textbook publishers and creators format and distribute educational texts. These methods make open textbooks that are:</p>
+            <ul>
+            <li><p><strong>Sustainable:</strong> Lantern methods utilize plain text formats and static files in order to minimize installation, hosting, and maintenance costs related to digital web publishing.</p></li>
+            <li><p><strong>Portable:</strong> Lantern relies on open source software and non-prorprietary file formats that can run on any machine. Because the web versions of open textbooks are static HTML files, they can be hosted on any web server. No databases, application software, or server maintenance required.</p></li>
+            <li><p><strong>Standards-driven:</strong> Lantern teaches semantic markup standards for document accessibility and compatibility. Lantern enforces a separation between content and styles in order to allow greater flexibility for converting and migrating textbook content.</p></li>
+            </ul>
+            <h2 id="motivation">Motivation</h2>
+            <p>Publishing is expensive. OER publishing programs require investments in several categories, including project management, editorial services, marketing, and technology. Lantern is an attempt to reduce the technology costs as much as possible in order to increase investments in other publishing cost categories. Our approach to reducing the technology footprint is to apply minimal computing principles to OER publishing.</p>
+            <p>The term “<a href="http://go-dh.github.io/mincomp/about/">minimal computing</a>” was coined in the digital humanities community with respect to the dissemination and preservation of scholarly works. It refers to a practice of using software, hardware, and network bandwidth under certain constraints.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> These constraints are intentional and self-imposed. In some ways, minimal computing is a counter-measure against the collateral effects of easy-to-use interfaces:</p>
+            <blockquote>
+            <p>The culture of “user friendly” interfaces that helped popularize computers for almost three decades now, and which underlines the dominant role of <code>.docx</code>, <code>.pdf</code> and <code>.epub</code> files today, has also led to some basic misunderstandings of what computers can and should do. In the case of writing, the expectation that you should get what you see continues to distance producers from their tools. As with any human tool, we need to understand computers a bit more intimately if we’re going to use them with any degree of critical awareness, and in order to avoid falling into what Matthew Kirschenbaum dubs the “haptic fallacy,” or “the belief that electronic objects are immaterial simply because we cannot reach out and touch them.” <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+            </blockquote>
+            <p>In practice, minimal computing is a planning framework for digital projects that essentially asks: “What do we need?” In open education, we need to license and diseminate educational texts in formats that enable unlimited distribution, transformation, and modification. Lantern teaches the value of plain text formats in order to provide flexible multiple publishing and distribution options. Because minimal computing does not imply minimal effort, we hope that Lantern helps flatten the learning curve.</p>
+            <h2 id="credits">Credits</h2>
+            <p>Lantern is led by Chris Diaz (Digital Publishing Librarian) and Lauren McKeen McDonald (Open Education Librarian) of Northwestern University with seed funding from the <a href="https://www.arl.org/">Association of Research Libraries</a>. Lantern would not exist with the research and development contributions of Sherry Wang (Physics, ’24). Our goal with Lantern is to distill what we’ve learned from these communities into a reproducible workflow for any open textbook publisher or <a href="https://en.wikipedia.org/wiki/Open_educational_resources">open educational resources</a> advocate to use on their own.</p>
+            <p>Like most open source projects, Lantern wouldn’t exist without building on the foundation of existing open source projects. Lantern is modification of <a href="https://github.com/wikiti/pandoc-book-template">Pandoc Book Template</a> by <a href="https://danielherzog.es/">Daniel Herzog Cruz</a> with open textbook features.</p>
+            <h1 id="get-started">Get Started</h1>
+            <p>Doctic uses <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> for content formatting and <a href="https://en.wikipedia.org/wiki/YAML">YAML</a> for metadata entry. These formats give us the flexibility to build our textbooks in multiple formats. They are also human-readable and software independent, which means we can open and read the source materials on any operating system now or in the future. Markdown and YAML are plain text formats that require a plain text editor.</p>
+            <h2 id="working-with-text">Working with Text</h2>
+            <p>Every operating system includes a default plain text editor. On Windows, the default editor is <a href="https://www.microsoft.com/en-us/p/windows-notepad/9msmlrh6lzf3?activetab=pivot:overviewtab">Notepad</a>; on macOS, the default editor is <a href="https://support.apple.com/guide/textedit/welcome/mac">TextEdit</a>. Both of these options will work, as well as any other text editor, but we recommend installing <a href="https://code.visualstudio.com/">Visual Studio Code (VS Code)</a> by Microsoft (available for Windows, macOS, and Linux).</p>
+            <p><a href="https://en.wikipedia.org/wiki/Microsoft_Word">Microsoft Word (MS Word)</a> documents (<code>.docx</code>) are a ubiquitous file format for authors and editors. It’s very likely that you’ll work with OER manuscripts in MS word format, so you’ll need a way to open and edit them. MS Word makes it very easy to write and edit documents, but digital production requires documents to have a semantic structure in order to tag and render headings, paragraphs, links, and references accurately. We recommend <a href="https://www.microsoft.com/en-us/microsoft-365/word?rtc=1">Microsoft Word</a> as a word processor, but <a href="https://www.libreoffice.org/">Libre Office</a> or <a href="https://www.google.com/docs/about/">Google Docs</a>.</p>
+            <h2 id="document-processing">Document Processing</h2>
+            <p>Doctic teaches two workflows for making and publishing open textbooks: online and desktop. The online workflow is the simpler options, but it depends on GitHub for document processing. The Desktop workflow is more complicated, but removes GitHub as a dependency by using your computer as a document processor. Both workflows use GitHub as a web hosting service and allow you to us any other web hosting service you choose. Beyond a text editor and a word processor, the setup requirements for each workflow will depend on your willingness to sign up for free web services or download and install software.</p>
+            <table>
+            <thead>
+            <tr class="header">
+            <th>Requirements</th>
+            <th>Online</th>
+            <th>Desktop</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>Text Editor</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            </tr>
+            <tr class="even">
+            <td>Word Processor</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            </tr>
+            <tr class="odd">
+            <td>GitHub Account</td>
+            <td>Yes</td>
+            <td>No</td>
+            </tr>
+            <tr class="even">
+            <td>Pandoc</td>
+            <td>No</td>
+            <td>Yes</td>
+            </tr>
+            <tr class="odd">
+            <td>LaTeX</td>
+            <td>No</td>
+            <td>Yes</td>
+            </tr>
+            <tr class="even">
+            <td>Make</td>
+            <td>No</td>
+            <td>Yes</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>The Desktop workflow includes additional recommendations. Windows users are recommended to install the <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux (WSL)</a>. Windows (with WSL installed) and macOS users are also recommended the <a href="https://brew.sh/">Homebrew</a> package manager. Guidance for setting up required and recommended software is provided.</p>
+            <h1 id="content">Content</h1>
+            <p>Doctic uses plain text formats for precise and flexible semantic formatting and data storage. This chapter discusses how to format and store the metadata and content for open textbooks in plain text.</p>
+            <h2 id="most-remediation-required-is-the-headings-so-fix-the-headings-in-word">Most remediation required is the headings, so fix the headings in word</h2>
+            <h2 id="metadata">Metadata</h2>
+            <p>The bibiliographic metadata for the open textbook is contained within the <code>metadata.yml</code> file. This file is written in <a href="https://en.wikipedia.org/wiki/YAML">YAML</a>, a syntax for storing <a href="https://en.wikipedia.org/wiki/Attribute%E2%80%93value_pair">key-value pairs</a>. For example, a key in the metadata example below would be <code>title</code> and value would be <code>Doctic</code>. YAML keys and values are separated by a colon (<code>:</code>). Keys with multiple values, like <code>author</code>, need to be started on a new line with indentation and preceeded with a hyphen (<code>-</code>). For some metadata keys, a paragraph or more of text might be warranted, like a <code>description</code>. In this case, the key is followed by a colon (<code>:</code>), a space, and a pipe (<code>|</code>). The text for the value starts on a new line that is indented.</p>
+            <h3 id="example">Example</h3>
+            <div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+            <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Doctic</span></span>
+            <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> A Minimal Computing Methodology for Open Textbooks</span></span>
+            <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span></span>
+            <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Chris Diaz</span></span>
+            <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Lauren McKeen McDonald</span></span>
+            <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">copyright</span><span class="kw">:</span><span class="at"> </span></span>
+            <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Chris Diaz</span></span>
+            <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Lauren McKeen McDonald</span></span>
+            <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">license</span><span class="kw">:</span><span class="at"> Creative Commons Attribution (CC BY) 4.0 International</span></span>
+            <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">publisher</span><span class="kw">:</span><span class="at"> Northwestern University Libraries</span></span>
+            <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2020-12-10</span></span>
+            <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">contributor</span><span class="kw">:</span></span>
+            <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Sherry Wang</span></span>
+            <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">lang</span><span class="kw">:</span><span class="at"> en-US</span></span>
+            <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">: </span><span class="ch">|</span></span>
+            <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  Doctic is a digital publishing toolkit for open textbooks. No experience with programming or coding is necessary. Doctic provides instructional guides and re-usable document templates needed for making open textbooks with free and open source software. With Doctic, we hope to minimize the technical maintenance costs of building, distributing, and preserving open textbooks. </span>
+            <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">subjects</span><span class="kw">:</span><span class="at"> </span></span>
+            <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> OER</span></span>
+            <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Digital Publishing</span></span>
+            <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Open Textbooks</span></span>
+            <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Pandoc</span></span>
+            <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">mainfont</span><span class="kw">:</span><span class="at"> DejaVu Sans</span></span>
+            <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+            <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter preferences:</span></span>
+            <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># - pandoc-crossref</span></span>
+            <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">linkReferences</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
+            <h3 id="tips-for-writing-yaml">Tips for Writing YAML</h3>
+            <p>YAML is a strict syntax that requires validation as part of the process for making the textbook’s output files. There are some cases where the build will fail due to a YAML validation error. There are a lot of helpful online formatting and linting tools for YAML (such as <a href="https://jsonformatter.org/yaml-formatter">this YAML formatter</a>) that can help fix non-obvious errors with your metadata.</p>
+            <h2 id="manuscripts">Manuscripts</h2>
+            <p>This toolkit explains how to prepare textbook manuscript files for HTML and PDF production. OER authors produce manuscript files in many formats. For example, an original manuscript is likely to be written in a <code>.docx</code> format from Microsoft Word; whereas, and adapted manuscript may include published material in <code>.epub</code> or <code>.html</code> formats. For best results, we recommend starting with <code>.docx</code>, <code>.epub</code> or <code>.html</code> manuscript files. Text processing software, including Microsoft Word, Scrivener, and Google Docs, all allow you to export documents to <code>.docx</code> files. Google Docs also supports exporting to <code>.html</code> and <code>.epub</code>. The quickest way to convert manuscript files to markdown is to use <a href="https://pandoc.org/">Pandoc</a>, a free and open source document converter we can run from the command-line.</p>
+            <h3 id="converting-microsoft-word-files">Converting Microsoft Word Files</h3>
+            <h1 id="online-publishing-with-github">Online Publishing with GitHub</h1>
+            <p>This workflow demonstrates using Doctic with GitHub a the textbook publishing tool.</p>
+            <h3 id="github">GitHub</h3>
+            <p>GitHub is not software we need to install; GitHub is a web service for managing <a href="https://git-scm.com/">Git</a> Repositories. Anyone can sign up for a free GitHub account to use their services for open source projects. One of the nice features that GitHub provides its users is GitHub Actions. GitHub Actions can run digital production tasks <em>on our behalf</em> using web servers they provide to us on demand.Here’s what GitHub Actions can do for us automatically:</p>
+            <ul>
+            <li>Detect changes to our Markdown source files</li>
+            <li>Update the web, PDF, EPUB, and DOCX versions of our open textbooks</li>
+            </ul>
+            <p>Doctic provides all of the configurations we need to use this service.</p>
+            <h2 id="github-pages">GitHub Pages</h2>
+            <ul>
+            <li>Install VS Code</li>
+            <li>Fork the GitHub repository to user’s account</li>
+            <li>Upload Markdown files to <code>chapters</code> directory</li>
+            <li>Edit <code>metadata.yml</code> file</li>
+            </ul>
+            <h2 id="self-hosted">Self-Hosted</h2>
+            <ul>
+            <li>Install Pandoc</li>
+            </ul>
+            <h3 id="pandoc">Pandoc</h3>
+            <p>Pandoc is free and open source software that converts between file formats. We’ll use it to convert between Markdown, Microsoft Word, HTML, EPUB, and PDF formats. Pandoc is used entirely from a computer terminal by running <code>pandoc</code> commands from the shell prompt.</p>
+            <p>Here’s some guidance on installing <a href="https://pandoc.org/">Pandoc</a>:</p>
+            <ul>
+            <li>Visit the Pandoc Releases page on GitHub: https://github.com/jgm/pandoc/releases</li>
+            <li>Pandoc provides options for Windows, macOS, and Linux. The <code>.msi</code> and <code>.pkg</code> files include installation Wizards for easy setup on Windows and macOS respectively.</li>
+            </ul>
+            <p>Once the installation completes, you can check to make sure everything worked as expected by opening a terminal and runnning: <code>pandoc --version</code>. This should return the Pandoc version number.</p>
+            <h3 id="digital-production-with-pandoc-and-make">Digital Production with Pandoc and Make</h3>
+            <p>The digital production tasks are handled by a combination of <a href="https://pandoc.org/">Pandoc</a> and <a href="https://www.gnu.org/software/make/">Make</a>. Pandoc is “a universal document converter” that will manage the conversion process between Markdown, HTML, PDF, EPUB, and DOCX formats. Make is a package bundler that simplifies our use of Pandoc by pre-setting a few sensible defaults for open textbook creation. Both are free software distributed under <a href="https://www.gnu.org/licenses/licenses.html#GPL">General Public Licenses</a>.</p>
+            <h1 id="desktop-publishing-with-pandoc-and-github">Desktop Publishing with Pandoc and GitHub</h1>
+            <h2 id="computer-terminal">Computer Terminal</h2>
+            <p>Every operating system comes with a terminal program pre-installed. Computer terminals give you direct access to files, folders, and programs on your machine without the help of a graphical user interface. Windows machines include two computer terminal programs: <a href="https://en.wikipedia.org/wiki/Cmd.exe">Command Prompt</a> and <a href="https://en.wikipedia.org/wiki/PowerShell">PowerShell</a>. macOS and (many Linux distributions) include a program simply called: <a href="https://en.wikipedia.org/wiki/Terminal_(macOS)">Terminal</a>.</p>
+            <p>The your default terminal is automatically detected and integrated with VS Code upon installation. From within VS Code, there are several ways to open your terminal. From the title bar:</p>
+            <ul>
+            <li>Click on <code>View</code> &gt; <code>Terminal</code> or</li>
+            <li>Click on <code>Terminal</code> &gt; <code>New Terminal</code></li>
+            </ul>
+            <p>See <a href="https://code.visualstudio.com/docs/editor/integrated-terminal">VS Code documentation</a> for more information on terminal options and configurations.</p>
+            <h2 id="using-pandoc">Using Pandoc</h2>
+            <p>Pandoc can be <a href="https://pandoc.org/installing.html">installed on most operating systems</a>. Review the <a href="https://pandoc.org/getting-started.html">getting started</a> directions to familarize yourself with your terminal (or command-prompt). You’ll need your terminal to be open to the folder that contains your manuscript files.</p>
+            <p>Here’s the basic syntax for a Pandoc command:</p>
+            <pre><code>pandoc --standalone &lt;input file&gt; --from &lt;input format&gt; --to &lt;output format&gt; -o &lt;output file&gt;</code></pre>
+            <p>Example Pandoc command:</p>
+            <pre><code>pandoc textbook.docx --from docx --to markdown -o textbook.md</code></pre>
+            <p>Pandoc allows you a lot of flexibility to construct your commands using a variety of options. Here are the most useful Pandoc options for converting OER textbook content to markdown:</p>
+            <ul>
+            <li><code>-s</code> or <code>--standalone</code>: Create a single document, rather than a document fragment.</li>
+            <li><code>-f</code> or <code>--from</code>: Specifies the original document’s markup format.</li>
+            <li><code>-t</code> or <code>--to</code>: Specifies the new document’s markup format.</li>
+            <li><code>-o</code>: Specifies the new document’s file name and extension.</li>
+            <li><code>--atx-headers</code>: Formats the markdown headings to the popular ATX-style.</li>
+            <li><code>--wrap=none</code>: Pandoc, by default, wraps text at a specific width. This setting disables that behavior.</li>
+            <li><code>--extract-media=images</code>: Tells Pandoc to copy embedded images from the input document to an <code>images</code> folder.</li>
+            <li><code>--mathjax</code>: For HTML output, this option adds <a href="https://www.mathjax.org/">MathJax</a></li>
+            <li><code>--css &lt;styles.css&gt;</code>: For HTML output, this option adds a link to a stylesheet you specify</li>
+            </ul>
+            <p>Here’s an example Pandoc command with options:</p>
+            <pre><code>pandoc textbook.docx --from docx --to markdown --atx-headers --extract-media=images -o textbook.md</code></pre>
+            <p>The accuracy of the conversion depends upon the structure of the input document. While Pandoc can handle the vast majority of the conversion, there is almost always a need for someone to check the output documents for errors and to make corrections to the Mardown formatting accordingly.</p>
+            <h2 id="microsoft-word-documents">Microsoft Word Documents</h2>
+            <p>Pandoc command:</p>
+            <pre><code>pandoc -s &lt;FILE&gt;.docx -f docx -t markdown --atx-header --wrap=none --extract-media=images -o &lt;FILE&gt;.md</code></pre>
+            <p>Notes:</p>
+            <ul>
+            <li>The <code>--atx-header</code> option only works if the source <code>.docx</code> file uses Heading 1, Heading 2, and Heading 3 <a href="https://support.microsoft.com/en-us/office/apply-styles-f8b96097-4d25-4fac-8200-6139c8093109">Microsoft Word style</a>.</li>
+            </ul>
+            <h2 id="adapting-and-remixing-open-content">Adapting and Remixing Open Content</h2>
+            <h3 id="oer-source-files">OER Source Files</h3>
+            <h3 id="basic-typesetting-with-markdown-and-latex">Basic Typesetting with Markdown and LaTeX</h3>
+            <p>We use <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> syntax for typesetting and formatting basic textbook components. Markdown is a non-proprietary, plain text markup language for text documents. Markdown files usually have a <code>.md</code> file extension, but sometimes they will have <code>.markdown</code> or <code>.txt</code> extension. We’re using it for common page elements, including:</p>
+            <ul>
+            <li>Headings</li>
+            <li>Paragraphs</li>
+            <li>Links</li>
+            <li>References</li>
+            <li>Quotes</li>
+            <li>Footnotes</li>
+            <li>Emphasis</li>
+            <li>Tables</li>
+            <li>Images</li>
+            <li><code>Code</code></li>
+            </ul>
+            <p>Mathematical equations, formulas, theorems can be formatted using <a href="https://www.latex-project.org/">LaTeX</a>/<a href="https://en.wikipedia.org/wiki/TeX">TeX</a> syntax <strong>within</strong> the Markdown documents. Math can be rendered in-line (i.e. within a paragraph) or displayed as a block (i.e. between two paragraphs). From the <a href="https://pandoc.org/MANUAL.html">Pandoc manual</a>:</p>
+            <blockquote>
+            <p>Anything between two <code>$</code> characters will be treated as TeX math. The opening <code>$</code> must have a non-space character immediately to its right, while the closing <code>$</code> must have a non-space character immediately to its left, and must not be followed immediately by a digit. Thus, <code>$20,000</code> and <code>$30,000</code> won’t parse as math. If for some reason you need to enclose text in literal <code>$</code> characters, backslash-escape them (e.g. <code>$\</code>) and they won’t be treated as math delimiters. For display math, use <code>$$</code> delimiters. (In this case, the delimiters may be separated from the formula by whitespace.) TeX math will be printed in all output formats.</p>
+            </blockquote>
+            <p>The Pandoc templates provided by Doctic are not intended to support the full range of <a href="https://www.latex-project.org/">LaTeX</a> typesetting capabilities. Doctic works best when the majority of the content can be expressed using Markdown, preserving LaTeX/TeX <em>only</em> for the mathematics.</p>
+            <h1 id="custom-blocks">Custom Blocks</h1>
+            <p>Lantern uses custom blocks<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> to give you the flexibility to customize the styles for specific sections within your textbook. Custom blocks in Lantern begin and end with three colons <code>:::</code> and are separated by empty lines before and after they occur in the text (like paragraphs). You can label the custom block anything by placing the label after the opening three colons. Custom block labels are case-senstive and must contain spaces (use hyphens to sepearate multi-word labels for readability). Here’s an example:</p>
+            <pre><code>::: block
+
+            Some text.
+
+            :::</code></pre>
+            <p>The custom block label becomes a <code>class</code> attribute for a <code>div</code> element in the resulting HTML:</p>
+            <pre><code>&lt;div class=&quot;block&quot;&gt;
+            Some text.
+            &lt;/div&gt;</code></pre>
+            <p>Similarly, the label becomes a new LaTeX environment:</p>
+            <pre><code>\begin{block}
+            Some text.
+            \end{block}</code></pre>
+            <p>Now, it is up to you to define the CSS rules or LaTeX macros that apply to the blocks.</p>
+            <section class="footnotes" role="doc-endnotes">
+            <hr />
+            <ol>
+            <li id="fn1" role="doc-endnote"><p>This feature is inspired by <a href="https://bookdown.org/yihui/bookdown/custom-blocks.html">Bookdown</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+            <li id="fn2" role="doc-endnote"><p>Gil, Alex. (2015). “The User, the Learner, and the Machines we Make,” <em>Minimal Computing: a working group of Go::DH</em>: https://go-dh.github.io/mincomp/thoughts/2015/05/21/user-vs-learner/<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+            <li id="fn3" role="doc-endnote"><p>This feature is inspired by <a href="https://bookdown.org/yihui/bookdown/custom-blocks.html">Bookdown</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+            </ol>
+            </section>
+        </div>
+    </div>
+        </body>
+</html>
