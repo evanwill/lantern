@@ -55,7 +55,6 @@
         <div class="uk-offcanvas-bar">
             <button class="uk-offcanvas-close" type="button" uk-close></button>
                             <nav id="TOC" role="doc-toc">
-                                <h2 id="toc-title">Contents</h2>
                                 <ul>
                                 <li><a href="#introduction">Introduction</a>
                                 <ul>
@@ -114,7 +113,7 @@
                     <h2>Lantern</h2>
                                         <p class="uk-text-bold">Chris Diaz, Lauren McKeen McDonald</p>
                     <p><p>Lantern is a digital publishing toolkit for open textbooks. No experience with programming or coding is necessary. Lantern provides instructional guides and re-usable document templates needed for making open textbooks with free and open source software. With Lantern, we hope to minimize the technical maintenance costs of building, distributing, and preserving open textbooks.</p></p>
-                    <ul uk-accordion>
+                    <ul uk-accordion="multiple: true">
                         <li>
                             <a class="uk-accordion-title" href="#">Details</a>
                             <div class="uk-accordion-content">
@@ -125,6 +124,14 @@
                                     <dd>Creative Commons Attribution (CC BY) 4.0 International</dd>
                                                                                                         </dl>
                             </div>
+                        </li>
+                        <li>
+                            <a class="uk-accordion-title" href="#">Download</a>
+                            <div class="uk-accordion-content">
+                                <p><span uk-icon="icon: print"></span> <a href="textbook.pdf">PDF</a></p>
+                                <p><span uk-icon="icon: pencil"></span> <a href="textbook.docx">Microsoft Word</a></p>
+                                                                <p><span uk-icon="icon: code"></span> <a href="https://github.com/nulib-oer/lantern" target="_blank">Git Repository</a></p>
+                                                            </div>
                         </li>
                     </ul>
                 </div>
