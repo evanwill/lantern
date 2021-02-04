@@ -61,10 +61,11 @@
                                 <li><a href="#features">Features</a></li>
                                 <li><a href="#credits">Credits</a></li>
                                 </ul></li>
-                                <li><a href="#get-started">Get Started</a>
+                                <li><a href="#the-technology">The Technology</a>
                                 <ul>
-                                <li><a href="#software-requirements">Software Requirements</a></li>
                                 <li><a href="#production-workflows">Production Workflows</a></li>
+                                <li><a href="#markdown-adding-structure-to-documents">Markdown: Adding Structure to Documents</a></li>
+                                <li><a href="#pandoc-building-textbook-editions">Pandoc: Building Textbook Editions</a></li>
                                 </ul></li>
                                 <li><a href="#online-publishing-with-github">Online Publishing with GitHub</a>
                                 <ul>
@@ -110,30 +111,28 @@
             <li><p><strong>Multi-format:</strong> Lantern teaches semantic markup technologies for producing Markdown, HTML, PDF, and DOCX editions of open textbooks.</p></li>
             </ul>
             <h3 id="credits">Credits</h3>
-            <p>Lantern is a project by Chris Diaz (Digital Publishing Librarian) and Lauren McKeen McDonald (Open Education Librarian) of Northwestern University with support from the <a href="https://www.arl.org/">Association of Research Libraries</a>. Lantern took inspiration from <a href="https://github.com/wikiti/pandoc-book-template">Pandoc Book Template</a> by <a href="https://danielherzog.es/">Daniel Herzog Cruz</a>.</p>
-            <h2 id="get-started">Get Started</h2>
+            <p>Lantern is a project by Chris Diaz (Digital Publishing Librarian) and Lauren McKeen McDonald (Open Education Librarian) of Northwestern University with support from the <a href="https://www.arl.org/">Association of Research Libraries</a>. Lantern is based on <a href="https://github.com/wikiti/pandoc-book-template">Pandoc Book Template</a>, and was inspired by <a href="https://bookdown.org/">Bookdown</a>, <a href="https://course-in-a-box.p2pu.org/">Course-in-a-Box</a>, <a href="https://collectionbuilder.github.io/">CollectionBuilder</a>, and <a href="https://minicomp.github.io/wax/">Wax</a>.</p>
+            <h2 id="the-technology">The Technology</h2>
             <div class="summary">
             <p><strong>TL;DR</strong></p>
-            <p>Lantern uses a combination of Markdown syntax and GitHub resources to format, build, and publish open textbooks.</p>
-            <ul>
-            <li>Install a text editor. We recommend <a href="https://code.visualstudio.com/">VS Code</a> for beginners.</li>
-            <li>Install a word processor. We recommend <a href="https://en.wikipedia.org/wiki/Microsoft_Word">Microsoft Word</a>.</li>
-            <li>Create a <a href="https://github.com">GitHub</a> account.</li>
-            </ul>
+            <p>Lantern teaches two production workflows that use <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> to format text and <a href="https://pandoc.org/">Pandoc</a> to create web, PDF, and Microsoft Word editions of open textbooks.</p>
+            <p>Lantern will help you…</p>
+            <ol type="1">
+            <li>Convert manuscripts from Microsoft Word to Markdown with Pandoc</li>
+            <li>Prepare manuscript content in Markdown using a text editor</li>
+            <li>Produce publishable web, PDF, and Microsoft Word editions with Pandoc</li>
+            </ol>
+            <p>Lantern assumes no prior knowledge of either technology and provides all of the necessary guides and templates to begin publishing open textbooks.</p>
             </div>
-            <p>Lantern uses <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> for content formatting and <a href="https://en.wikipedia.org/wiki/YAML">YAML</a> for textbook metadata. Both Markdown and YAML were designed to be human-readable and writable. You’ll need a text editor to write and edit both Markdown and YAML.</p>
-            <h3 id="software-requirements">Software Requirements</h3>
-            <p>Every operating system includes a default plain text editor. On Windows, the default editor is <a href="https://www.microsoft.com/en-us/p/windows-notepad/9msmlrh6lzf3?activetab=pivot:overviewtab">Notepad</a>; on macOS, the default editor is <a href="https://support.apple.com/guide/textedit/welcome/mac">TextEdit</a>. Both of these options will work, as well as any other text editor, but we recommend installing <a href="https://code.visualstudio.com/">Visual Studio Code (VS Code)</a> by Microsoft (available for Windows, macOS, and Linux).</p>
-            <p><a href="https://en.wikipedia.org/wiki/Microsoft_Word">Microsoft Word (MS Word)</a> documents (<code>.docx</code>) are a ubiquitous file format for authors and editors. It’s very likely that you’ll work with OER manuscripts in MS word format, so you’ll need a way to open and edit them. MS Word makes it very easy to write and edit documents, but digital production requires documents to have a semantic structure in order to tag and render headings, paragraphs, links, and references accurately. We recommend <a href="https://www.microsoft.com/en-us/microsoft-365/word?rtc=1">Microsoft Word</a> as a word processor, but <a href="https://www.libreoffice.org/">Libre Office</a> or <a href="https://www.google.com/docs/about/">Google Docs</a> will also work.</p>
             <h3 id="production-workflows">Production Workflows</h3>
             <p>Lantern teaches two workflows for making and publishing open textbooks: <strong>online</strong> and <strong>desktop</strong>. The online workflow is the simpler option, but it depends on GitHub for processing. The Desktop workflow is more complicated, but removes GitHub as a dependency. Both workflows use GitHub as a web hosting service, but you are free to use any other web hosting service.</p>
-            <p>Lantern uses a few open source software packages to build the web, PDF, and DOCX outputs:</p>
+            <p>Lantern uses a few open source software packages to build the web, PDF, and DOCX outputs, but you won’t interact with these programs if you’re using the online workflow:</p>
             <ul>
             <li><a href="https://pandoc.org/">Pandoc</a> transforms the Markdown and YAML source files into web, LaTeX, and DOCX editions</li>
             <li><a href="https://www.latex-project.org/">LaTeX</a> typesets and builds the PDF edition</li>
             <li><a href="https://www.gnu.org/software/make/">Make</a> simplifies the build processes</li>
             </ul>
-            <p>The online workflow provides a GitHub repository that is preconfigured to run the required software for building the web, PDF, and DOCX editions. We recommend the online workflow to first-time users of Lantern and the Desktop workflow to advanced users looking for more customizations.</p>
+            <p>The online workflow provides a GitHub repository that is preconfigured to run all of the required software for building the web, PDF, and DOCX editions. We recommend the online workflow to first-time users of Lantern and the Desktop workflow to advanced users looking for more customizations.</p>
             <p>Beyond a text editor and a word processor, the setup requirements for each workflow will depend on your willingness to sign up for free web services or download and install software.</p>
             <table>
             <thead>
@@ -176,6 +175,28 @@
             </tr>
             </tbody>
             </table>
+            <div class="summary">
+            <p><strong>Microsoft Word</strong></p>
+            <p>Both workflows require manuscript files to be in either Markdown (<code>.md</code>) or Microsoft Word (<code>.docx</code>) formats. If you’re starting with Microsoft Word files, you’ll need the ability to open and edit the files. We recommend <a href="https://www.microsoft.com/en-us/microsoft-365/word?rtc=1">Microsoft Word</a> as your word processor, but <a href="https://www.libreoffice.org/">Libre Office</a> or <a href="https://www.google.com/docs/about/">Google Docs</a> will also work. Lantern will help you convert the files to Markdown, which will be the syntax we’ll use for adding semantic structure to the open textbook.</p>
+            </div>
+            <h3 id="markdown-adding-structure-to-documents">Markdown: Adding Structure to Documents</h3>
+            <blockquote>
+            <p>The idea is to identify logical structures in your document (a title, sections, subsections, footnotes, etc.), mark them with some unobtrusive characters, and then “compile” the resulting text with a typesetting interpreter which will format the document consistently, according to a specified style. <em>– Dennis Tenen and Grant Wythoff, “<a href="https://doi.org/10.46430/phen0041">Sustainable Authorship in Plain Text using Pandoc and Markdown</a>,” The Programming Historian 3 (2014).</em></p>
+            </blockquote>
+            <p>Markdown provides big benefits to open textbook publishers:</p>
+            <ol type="1">
+            <li>Markdown was designed as an “<a href="https://daringfireball.net/projects/markdown/">easy-to-read, easy-to-write</a>” plain text format</li>
+            <li>Markdown files can be opened on any device with any operating system</li>
+            </ol>
+            <blockquote>
+            <p>Plain text files have many advantages over other formats. For one, they are readable on virtually all devices. They have also withstood the test of time better than other file types – if you’ve ever tried to open a document saved in a legacy word processor format, you’ll be familiar with the compatibility challenges involved. <em>– Sarah Simpkin, “<a href="https://doi.org/10.46430/phen0046">Getting Started with Markdown</a>,” The Programming Historian 4 (2015).</em></p>
+            </blockquote>
+            <p>You can create and edit Markdown files on an operating system using a text editor. Every operating system includes a default plain text editor. On Windows, the default editor is <a href="https://www.microsoft.com/en-us/p/windows-notepad/9msmlrh6lzf3?activetab=pivot:overviewtab">Notepad</a>; on macOS, the default editor is <a href="https://support.apple.com/guide/textedit/welcome/mac">TextEdit</a>. Both of these options will work, as well as any other text editor, but we recommend installing <a href="https://code.visualstudio.com/">Visual Studio Code (VS Code)</a> (available for Windows, macOS, and Linux).</p>
+            <div class="objectives">
+            <p>Markdown Demonstration in Five Minutes or Less. Until then, there’s <a href="https://youtu.be/2JE66WFpaII">this</a>.</p>
+            </div>
+            <h3 id="pandoc-building-textbook-editions">Pandoc: Building Textbook Editions</h3>
+            <p><a href="https://pandoc.org/">Pandoc</a> is the primary document processing software that Lantern uses to convert textbook files between formats. If you’re using the <strong>online</strong> production workflow, you won’t need to install or interact with Pandoc at all; everything will be pre-configured in the GitHub template repository.</p>
             <h2 id="online-publishing-with-github">Online Publishing with GitHub</h2>
             <p>This workflow demonstrates using Doctic with GitHub a the textbook publishing tool.</p>
             <h4 id="github">GitHub</h4>
@@ -283,17 +304,17 @@
             <p>Now, it is up to you to define the CSS rules or LaTeX macros that apply to the blocks.</p>
             <h2 id="further-reading">Further Reading</h2>
             <p>Publishing is expensive. OER publishing programs require investments in several categories, including project management, editorial services, marketing, and technology. Lantern is an attempt to reduce the technology costs as much as possible in order to increase investments in other publishing cost categories. Our approach to reducing the technology footprint is to apply minimal computing principles to OER publishing.</p>
-            <p>The term “<a href="http://go-dh.github.io/mincomp/about/">minimal computing</a>” was coined in the digital humanities community with respect to the dissemination and preservation of scholarly works. It refers to a practice of using software, hardware, and network bandwidth under certain constraints.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> These constraints are intentional and self-imposed. In some ways, minimal computing is a counter-measure against the collateral effects of easy-to-use interfaces:</p>
+            <p>The term “<a href="http://go-dh.github.io/mincomp/about/">minimal computing</a>” was coined in the digital humanities community with respect to the dissemination and preservation of scholarly works. It refers to a practice of using software, hardware, and network bandwidth under certain constraints. These constraints are intentional and self-imposed. In some ways, minimal computing is a counter-measure against the collateral effects of easy-to-use interfaces:</p>
             <blockquote>
-            <p>The culture of “user friendly” interfaces that helped popularize computers for almost three decades now, and which underlines the dominant role of <code>.docx</code>, <code>.pdf</code> and <code>.epub</code> files today, has also led to some basic misunderstandings of what computers can and should do. In the case of writing, the expectation that you should get what you see continues to distance producers from their tools. As with any human tool, we need to understand computers a bit more intimately if we’re going to use them with any degree of critical awareness, and in order to avoid falling into what Matthew Kirschenbaum dubs the “haptic fallacy,” or “the belief that electronic objects are immaterial simply because we cannot reach out and touch them.” <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+            <p>The culture of “user friendly” interfaces that helped popularize computers for almost three decades now, and which underlines the dominant role of <code>.docx</code>, <code>.pdf</code> and <code>.epub</code> files today, has also led to some basic misunderstandings of what computers can and should do. In the case of writing, the expectation that you should get what you see continues to distance producers from their tools. As with any human tool, we need to understand computers a bit more intimately if we’re going to use them with any degree of critical awareness, and in order to avoid falling into what Matthew Kirschenbaum dubs the “haptic fallacy,” or “the belief that electronic objects are immaterial simply because we cannot reach out and touch them.”</p>
             </blockquote>
             <p>In practice, minimal computing is a planning framework for digital projects that essentially asks: “What do we need?” In open education, we need to license and diseminate educational texts in formats that enable unlimited distribution, transformation, and modification. Lantern teaches the value of plain text formats in order to provide flexible multiple publishing and distribution options. Because minimal computing does not imply minimal effort, we hope that Lantern helps flatten the learning curve.</p>
+            <p>“What is Minimal Computing?” (n.d.). <em>Minimal Computing: a working group of Go::DH</em>: http://go-dh.github.io/mincomp/about/</p>
+            <p>Gil, Alex. (2015). “The User, the Learner, and the Machines we Make,” <em>Minimal Computing: a working group of Go::DH</em>: https://go-dh.github.io/mincomp/thoughts/2015/05/21/user-vs-learner/</p>
             <section class="footnotes" role="doc-endnotes">
             <hr />
             <ol>
-            <li id="fn1" role="doc-endnote"><p>“What is Minimal Computing?” (n.d.). <em>Minimal Computing: a working group of Go::DH</em>: http://go-dh.github.io/mincomp/about/<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-            <li id="fn2" role="doc-endnote"><p>“What is Minimal Computing?” (n.d.). <em>Minimal Computing: a working group of Go::DH</em>: http://go-dh.github.io/mincomp/about/<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-            <li id="fn3" role="doc-endnote"><p>Gil, Alex. (2015). “The User, the Learner, and the Machines we Make,” <em>Minimal Computing: a working group of Go::DH</em>: https://go-dh.github.io/mincomp/thoughts/2015/05/21/user-vs-learner/<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+            <li id="fn1" role="doc-endnote"><p>This feature is inspired by <a href="https://bookdown.org/yihui/bookdown/custom-blocks.html">Bookdown</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
             </ol>
             </section>
         </div>
