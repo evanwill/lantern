@@ -56,7 +56,11 @@
             <button class="uk-offcanvas-close" type="button" uk-close></button>
                             <nav id="TOC" role="doc-toc">
                                 <ul>
-                                <li><a href="#introduction">Introduction</a></li>
+                                <li><a href="#introduction">Introduction</a>
+                                <ul>
+                                <li><a href="#features">Features</a></li>
+                                <li><a href="#credits">Credits</a></li>
+                                </ul></li>
                                 <li><a href="#get-started">Get Started</a>
                                 <ul>
                                 <li><a href="#software-requirements">Software Requirements</a></li>
@@ -76,7 +80,6 @@
                                 </ul></li>
                                 <li><a href="#custom-blocks">Custom Blocks</a></li>
                                 <li><a href="#further-reading">Further Reading</a></li>
-                                <li><a href="#credits">Credits</a></li>
                                 </ul>
                 </nav>
                     </div>
@@ -97,16 +100,21 @@
     <section class="uk-section uk-article">
         <div class="uk-container uk-container-small uk-text-large">
             <h2 id="introduction">Introduction</h2>
-            <p>Lantern is a <a href="https://go-dh.github.io/mincomp/about/">minimal computing</a> toolkit for open textbook creators. Lantern can help you produce texts that are built for longevity and reusability.</p>
+            <div class="summary">
+            <p><strong>Digital publishing is expensive.</strong> Lantern aims to minimize the technology costs of producing and distributing open textbooks in order to focus limited resources on funding the writing and editing of open educational resources.</p>
+            </div>
+            <h3 id="features">Features</h3>
             <ul>
-            <li><p><strong>Sustainable:</strong> Lantern focuses on plain text formats and static files in order to minimize installation, hosting, and maintenance costs related to digital web publishing.</p></li>
-            <li><p><strong>Portable:</strong> Lantern relies on open source software and non-prorprietary file formats that can run on any machine or web host. No databases, application software, or server maintenance required.</p></li>
-            <li><p><strong>Accessible:</strong> Lantern teaches semantic markup formatting for producing accessible HTML, PDF, and DOCX versions of open textbooks.</p></li>
+            <li><p><strong>Sustainable:</strong> Lantern focuses on <a href="https://go-dh.github.io/mincomp/about/">minimal computing</a> techniques in order to minimize infrastructure, configuration, hosting, and maintenance costs related to digital web publishing.</p></li>
+            <li><p><strong>Portable:</strong> Lantern emphasizes the use of plain text, non-prorprietary file formats that can run on any machine or web host. No databases, application software, or server maintenance required.</p></li>
+            <li><p><strong>Multi-format:</strong> Lantern teaches semantic markup technologies for producing Markdown, HTML, PDF, and DOCX editions of open textbooks.</p></li>
             </ul>
-            <p>With Lantern, we hope to minimize the technical maintenance costs of building, distributing, and preserving open textbooks.</p>
+            <h3 id="credits">Credits</h3>
+            <p>Lantern is a project by Chris Diaz (Digital Publishing Librarian) and Lauren McKeen McDonald (Open Education Librarian) of Northwestern University with support from the <a href="https://www.arl.org/">Association of Research Libraries</a>. Lantern took inspiration from <a href="https://github.com/wikiti/pandoc-book-template">Pandoc Book Template</a> by <a href="https://danielherzog.es/">Daniel Herzog Cruz</a>.</p>
             <h2 id="get-started">Get Started</h2>
             <div class="summary">
             <p><strong>TL;DR</strong></p>
+            <p>Lantern uses a combination of Markdown syntax and GitHub resources to format, build, and publish open textbooks.</p>
             <ul>
             <li>Install a text editor. We recommend <a href="https://code.visualstudio.com/">VS Code</a> for beginners.</li>
             <li>Install a word processor. We recommend <a href="https://en.wikipedia.org/wiki/Microsoft_Word">Microsoft Word</a>.</li>
@@ -280,9 +288,6 @@
             <p>The culture of “user friendly” interfaces that helped popularize computers for almost three decades now, and which underlines the dominant role of <code>.docx</code>, <code>.pdf</code> and <code>.epub</code> files today, has also led to some basic misunderstandings of what computers can and should do. In the case of writing, the expectation that you should get what you see continues to distance producers from their tools. As with any human tool, we need to understand computers a bit more intimately if we’re going to use them with any degree of critical awareness, and in order to avoid falling into what Matthew Kirschenbaum dubs the “haptic fallacy,” or “the belief that electronic objects are immaterial simply because we cannot reach out and touch them.” <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
             </blockquote>
             <p>In practice, minimal computing is a planning framework for digital projects that essentially asks: “What do we need?” In open education, we need to license and diseminate educational texts in formats that enable unlimited distribution, transformation, and modification. Lantern teaches the value of plain text formats in order to provide flexible multiple publishing and distribution options. Because minimal computing does not imply minimal effort, we hope that Lantern helps flatten the learning curve.</p>
-            <h2 id="credits">Credits</h2>
-            <p>Lantern is led by Chris Diaz (Digital Publishing Librarian) and Lauren McKeen McDonald (Open Education Librarian) of Northwestern University with seed funding from the <a href="https://www.arl.org/">Association of Research Libraries</a>. Lantern would not exist with the research and development contributions of Sherry Wang (Physics, ’24). Our goal with Lantern is to distill what we’ve learned from these communities into a reproducible workflow for any open textbook publisher or <a href="https://en.wikipedia.org/wiki/Open_educational_resources">open educational resources</a> advocate to use on their own.</p>
-            <p>Like most open source projects, Lantern wouldn’t exist without building on the foundation of existing open source projects. Lantern is modification of <a href="https://github.com/wikiti/pandoc-book-template">Pandoc Book Template</a> by <a href="https://danielherzog.es/">Daniel Herzog Cruz</a> with open textbook features.</p>
             <section class="footnotes" role="doc-endnotes">
             <hr />
             <ol>
