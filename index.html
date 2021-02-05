@@ -64,6 +64,7 @@
                                 <li><a href="#the-technology">The Technology</a>
                                 <ul>
                                 <li><a href="#production-workflows">Production Workflows</a></li>
+                                <li><a href="#processing-software">Processing Software</a></li>
                                 <li><a href="#markdown-adding-structure-to-documents">Markdown: Adding Structure to Documents</a></li>
                                 <li><a href="#pandoc-building-textbook-editions">Pandoc: Building Textbook Editions</a></li>
                                 </ul></li>
@@ -116,24 +117,29 @@
             <div class="summary">
             <p><strong>TL;DR</strong></p>
             <p>Lantern teaches two production workflows that use <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> to format text and <a href="https://pandoc.org/">Pandoc</a> to create web, PDF, and Microsoft Word editions of open textbooks.</p>
-            <p>Lantern will help you…</p>
+            <p>Specifically, Lantern will help you…</p>
             <ol type="1">
-            <li>Convert manuscripts from Microsoft Word to Markdown with Pandoc</li>
-            <li>Prepare manuscript content in Markdown using a text editor</li>
-            <li>Produce publishable web, PDF, and Microsoft Word editions with Pandoc</li>
+            <li>Convert manuscripts from Microsoft Word to Markdown</li>
+            <li>Prepare manuscript content in Markdown</li>
+            <li>Produce publishable web, PDF, and Microsoft Word editions</li>
             </ol>
-            <p>Lantern assumes no prior knowledge of either technology and provides all of the necessary guides and templates to begin publishing open textbooks.</p>
+            <p><strong>Lantern assumes no prior experience with writing code.</strong> Lantern provides all of the necessary guides and templates to begin publishing open textbooks with free and open source software.</p>
             </div>
             <h3 id="production-workflows">Production Workflows</h3>
-            <p>Lantern teaches two workflows for making and publishing open textbooks: <strong>online</strong> and <strong>desktop</strong>. The online workflow is the simpler option, but it depends on GitHub for processing. The Desktop workflow is more complicated, but removes GitHub as a dependency. Both workflows use GitHub as a web hosting service, but you are free to use any other web hosting service.</p>
-            <p>Lantern uses a few open source software packages to build the web, PDF, and DOCX outputs, but you won’t interact with these programs if you’re using the online workflow:</p>
+            <p>Lantern teaches two methods for making and publishing open textbooks:</p>
             <ul>
-            <li><a href="https://pandoc.org/">Pandoc</a> transforms the Markdown and YAML source files into web, LaTeX, and DOCX editions</li>
-            <li><a href="https://www.latex-project.org/">LaTeX</a> typesets and builds the PDF edition</li>
+            <li><p>The <strong>online</strong> workflow is the simpler option, but it depends on GitHub for document processing. Some free software installation is recommended but not required. This workflow does not use the command line.</p></li>
+            <li><p>The <strong>desktop</strong> workflow is more complicated, but removes GitHub as a dependency. Some free software installation is required. This workflow uses the command line to run scripts that Lantern provides.</p></li>
+            </ul>
+            <p>Both workflows use <a href="https://github.com/">GitHub</a> as a web hosting service, but you will be free to use any other web hosting service. <strong>We recommend the online workflow to first-time users of Lantern</strong> and the Desktop workflow to advanced users looking for more customizations.</p>
+            <h3 id="processing-software">Processing Software</h3>
+            <p>Lantern uses a few open source software programs to build the web, PDF, and DOCX outputs, but you won’t interact with these programs if you’re using the online workflow:</p>
+            <ul>
+            <li><a href="https://pandoc.org/">Pandoc</a> transforms the Markdown source files into web, LaTeX, and DOCX editions</li>
+            <li><a href="https://www.latex-project.org/">LaTeX</a> (via Pandoc) typesets and renders the PDF edition</li>
             <li><a href="https://www.gnu.org/software/make/">Make</a> simplifies the build processes</li>
             </ul>
-            <p>The online workflow provides a GitHub repository that is preconfigured to run all of the required software for building the web, PDF, and DOCX editions. We recommend the online workflow to first-time users of Lantern and the Desktop workflow to advanced users looking for more customizations.</p>
-            <p>Beyond a text editor and a word processor, the setup requirements for each workflow will depend on your willingness to sign up for free web services or download and install software.</p>
+            <p>The online workflow provides a GitHub repository that is preconfigured to run all of the required software for building the web, PDF, and DOCX editions. The Desktop workflow includes guidance on installing and using Pandoc, LaTeX, and Make.</p>
             <table>
             <thead>
             <tr class="header">
@@ -191,12 +197,12 @@
             <blockquote>
             <p>Plain text files have many advantages over other formats. For one, they are readable on virtually all devices. They have also withstood the test of time better than other file types – if you’ve ever tried to open a document saved in a legacy word processor format, you’ll be familiar with the compatibility challenges involved. <em>– Sarah Simpkin, “<a href="https://doi.org/10.46430/phen0046">Getting Started with Markdown</a>,” The Programming Historian 4 (2015).</em></p>
             </blockquote>
-            <p>You can create and edit Markdown files on an operating system using a text editor. Every operating system includes a default plain text editor. On Windows, the default editor is <a href="https://www.microsoft.com/en-us/p/windows-notepad/9msmlrh6lzf3?activetab=pivot:overviewtab">Notepad</a>; on macOS, the default editor is <a href="https://support.apple.com/guide/textedit/welcome/mac">TextEdit</a>. Both of these options will work, as well as any other text editor, but we recommend installing <a href="https://code.visualstudio.com/">Visual Studio Code (VS Code)</a> (available for Windows, macOS, and Linux).</p>
+            <p>You can create and edit Markdown files using a text editor. Every operating system includes a default plain text editor. On Windows, the default editor is <a href="https://www.microsoft.com/en-us/p/windows-notepad/9msmlrh6lzf3?activetab=pivot:overviewtab">Notepad</a>; on macOS, the default editor is <a href="https://support.apple.com/guide/textedit/welcome/mac">TextEdit</a>. Both of these options will work, as well as any other text editor, but we recommend installing <a href="https://code.visualstudio.com/">Visual Studio Code (VS Code)</a>, which is free for Windows, macOS, and Linux.</p>
             <div class="objectives">
             <p>Markdown Demonstration in Five Minutes or Less. Until then, there’s <a href="https://youtu.be/2JE66WFpaII">this</a>.</p>
             </div>
             <h3 id="pandoc-building-textbook-editions">Pandoc: Building Textbook Editions</h3>
-            <p><a href="https://pandoc.org/">Pandoc</a> is the primary document processing software that Lantern uses to convert textbook files between formats. If you’re using the <strong>online</strong> production workflow, you won’t need to install or interact with Pandoc at all; everything will be pre-configured in the GitHub template repository.</p>
+            <p><a href="https://pandoc.org/">Pandoc</a> is the primary document processing software that Lantern uses to convert textbook files between formats. It’s a command line tool, but if you’re using the <strong>online</strong> production workflow, you won’t need to install or interact with Pandoc at all; everything will be pre-configured in the GitHub template repository. Lantern teaches you how to prepare manuscripts for Pandoc to properly convert and format the resulting textbook editions. More guiadance and instructions are covered in the Desktop workflow tutorial.</p>
             <h2 id="online-publishing-with-github">Online Publishing with GitHub</h2>
             <p>This workflow demonstrates using Doctic with GitHub a the textbook publishing tool.</p>
             <h4 id="github">GitHub</h4>
