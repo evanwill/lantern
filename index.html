@@ -13,6 +13,7 @@
         <link rel="stylesheet" type="text/css" href="book.css">
         <script src="uikit.min.js" defer></script>
         <script src="uikit-icons.min.js" defer></script>
+                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
                 <!-- Bibliographic Metadata -->
         <meta name="citation_title" content="Lantern">
         <meta name="citation_year" content="">
@@ -122,8 +123,8 @@
             <h3 id="processing-software">Processing Software</h3>
             <p>Lantern uses a few open source software programs to build the web, PDF, and DOCX outputs, but you won’t interact with these programs if you’re using the online workflow:</p>
             <ul>
-            <li><a href="https://pandoc.org/">Pandoc</a> transforms the Markdown source files into web, LaTeX, and DOCX editions</li>
-            <li><a href="https://www.latex-project.org/">LaTeX</a> (via Pandoc) typesets and renders the PDF edition</li>
+            <li><a href="https://pandoc.org/">Pandoc</a> transforms the Markdown source files into web, <span class="math inline">\(\LaTeX\)</span>, and DOCX editions</li>
+            <li><a href="https://www.latex-project.org/"><span class="math inline">\(\LaTeX\)</span></a> (via Pandoc) typesets and renders the PDF edition</li>
             <li><a href="https://www.gnu.org/software/make/">Make</a> simplifies the production settings and processes</li>
             </ul>
             <p>The online workflow provides a GitHub repository that is preconfigured to run all of the required software for building the web, PDF, and DOCX editions. The Desktop workflow includes guidance on installing and using Pandoc, LaTeX, and Make.</p>
@@ -191,6 +192,8 @@
             <p>Pandoc is strictly a command line tool, but if you’re using the <strong>online</strong> production workflow, you won’t need to install or interact with Pandoc directly. Instead, everything will be pre-configured in the GitHub template repository for using Pandoc with <a href="https://github.com/features/actions">GitHub Actions</a> on the fly.</p>
             <h2 id="appendix-markdown-tutorial">Appendix: Markdown Tutorial</h2>
             <p>Markdown Demonstration in Five Minutes or Less. Until then, there’s <a href="https://youtu.be/2JE66WFpaII">this</a>.</p>
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2JE66WFpaII" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
             <h2 id="appendix-microsoft-word-styles">Appendix: Microsoft Word Styles</h2>
         </div>
     </div>
