@@ -13,7 +13,6 @@
         <link rel="stylesheet" type="text/css" href="book.css">
         <script src="uikit.min.js" defer></script>
         <script src="uikit-icons.min.js" defer></script>
-                <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
                 <!-- Bibliographic Metadata -->
         <meta name="citation_title" content="Lantern">
         <meta name="citation_year" content="">
@@ -31,6 +30,8 @@
         <meta name="twitter:title" content="Lantern" />
         <meta name="twitter:description" content="<p>Lantern is an open source, digital publishing toolkit for open textbooks. Lantern includes instructional guides, adaptable templates, and production tools. No experience with programming or coding is necessary.</p>" />
         <meta name="twitter:image" content="cover.png" />
+        <!-- Loads AnchorJS library: https://www.bryanbraun.com/anchorjs/ -->
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
         <!--[if lt IE 9]>
             <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
         <![endif]-->
@@ -46,13 +47,15 @@
                     </a>
                 </div>
                 <div class="nav-overlay uk-navbar-right">
-                    <a uk-icon="menu" href="#toc" uk-toggle></a>
+                    <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #toc">
+                        
+                    </button>
                 </div>
             </nav>
         </div>
     </header>
 
-    <div id="toc" uk-offcanvas="mode: slide; flip: true">
+    <div id="toc" uk-offcanvas="mode: slide">
         <div class="uk-offcanvas-bar">
             <button class="uk-offcanvas-close" type="button" uk-close></button>
                             <nav id="TOC" role="doc-toc">
@@ -123,8 +126,8 @@
             <h3 id="processing-software">Processing Software</h3>
             <p>Lantern uses a few open source software programs to build the web, PDF, and DOCX outputs, but you won’t interact with these programs if you’re using the online workflow:</p>
             <ul>
-            <li><a href="https://pandoc.org/">Pandoc</a> transforms the Markdown source files into web, <span class="math inline">\(\LaTeX\)</span>, and DOCX editions</li>
-            <li><a href="https://www.latex-project.org/"><span class="math inline">\(\LaTeX\)</span></a> (via Pandoc) typesets and renders the PDF edition</li>
+            <li><a href="https://pandoc.org/">Pandoc</a> transforms the Markdown source files into web, LaTeX, and DOCX editions</li>
+            <li><a href="https://www.latex-project.org/">LaTeX</a> (via Pandoc) typesets and renders the PDF edition</li>
             <li><a href="https://www.gnu.org/software/make/">Make</a> simplifies the production settings and processes</li>
             </ul>
             <p>The online workflow provides a GitHub repository that is preconfigured to run all of the required software for building the web, PDF, and DOCX editions. The Desktop workflow includes guidance on installing and using Pandoc, LaTeX, and Make.</p>
@@ -197,5 +200,9 @@
             <h2 id="appendix-microsoft-word-styles">Appendix: Microsoft Word Styles</h2>
         </div>
     </div>
-        </body>
+        <script>
+        /* AnchorJS docs: https://www.bryanbraun.com/anchorjs/ */
+        anchors.add();
+    </script>
+    </body>
 </html>
