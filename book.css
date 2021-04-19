@@ -1,19 +1,38 @@
 /*  This file overrides styles set by the UIKit library (`assets/uikit.css`). It's really just the same styles copied over and applied to directly elements, ids, and classes produced by Pandoc */
 
-#TOC ul {
+html {
+    /* 1 */
+    font-family: Source Sans Pro Web,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+  }
+
+body {
+  color: #1b1b1b;
+  background-color: #fff;
+}
+
+a {
+  color: #663399;
+  font-weight: bold;
+}
+
+#toc ul {
     list-style:none;
     margin: 0;
     padding: 0;
-}
+  }
 
-#TOC ul li {
+#toc ul li {
     display: block;
     text-decoration: none;
     padding: 5px 0;
     margin: 5px 0;
 }
 
-#TOC ul ul {
+#toc ul ul {
     padding-left: 1rem;
     font-size: 0.875rem;
 }
@@ -100,7 +119,9 @@ details summary {
   display: flow-root;
   padding: 30px 30px;
   background: #e6e6e6;
+  margin: 3rem 0;
 }
+
 
 /* ========================================================================
    Component: Table
@@ -220,4 +241,46 @@ blockquote em::before {
 
 h3 {
   font-weight: bold;
+}
+
+.uk-light .uk-text-lead {
+  color: #91a6ba;
+}
+
+.uk-light {
+  color: #fff;
+}
+
+/* Accessibility Features */
+
+.skip-link {
+  background: #319795;
+  color: #fff;
+  font-weight: 700;
+  left: 50%;
+  padding: 4px;
+  position: absolute;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+}
+
+.skip-link:focus {
+  transform: translateY(0%);
+}
+
+.skip-link:focus-within {
+  transform: translateY(0%);
+}
+
+.uk-container {
+  background-color: #fff;
+  color: #000;
+}
+
+.uk-navbar-item {
+  color: #000
+}
+
+.uk-text-small {
+  font-size: 1rem;
 }
