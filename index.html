@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en-us">
     <head>
         <meta charset="utf-8" />
         <meta name="generator" content="pandoc" />
@@ -39,7 +39,7 @@
     
     <header role="banner">
         <div class="skip-link" >
-            Skip to <a href='#nav'>table of contents</a> or <a href='#main'>first chapter</a>
+            Skip to <a href="#toc">table of contents</a>, <a href="#info">book information</a>, or <a href="#begin">first chapter</a>
         </div>
         <div class="uk-container">
             <nav id="navbar" class="uk-navbar uk-background-default" uk-sticky>
@@ -49,7 +49,7 @@
                     </a>
                 </div>
                 <div class="nav-overlay uk-navbar-right">
-                    <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #toc">
+                    <button class="uk-button uk-margin-small-right" type="button" uk-toggle="target: #toc">
                         Contents
                     </button>
                 </div>
@@ -79,25 +79,27 @@
                                 </ul>
                     </div>
     </nav>
+   
+    <main>
 
-    <section class="uk-section uk-section-small">
-        <div class="uk-container uk-container-small">
-            <div class="uk-grid uk-grid-medium uk-flex uk-flex-middle">
-                <div class="uk-background-secondary uk-light uk-padding uk-text-large">
-                    <img data-src="images/cover.png" width="330" height="auto" alt="Book cover" uk-img offsetLeft="0" class="uk-align-left uk-margin-remove-adjacent">
-                    <h1 class="uk-text-bold">
-                        Lantern
-                    </h1>
-                                        <p class="uk-text-lead uk-text-italic">A Digital Publishing Toolkit for Open Textbooks</p>
-                                        <p class="uk-text-small">Chris Diaz, Lauren McKeen McDonald</p>
-                    <p>This guide introduces and demonstrates a minimal computing approach to producing open textbooks using free and open source software.</p>
+        <section id="info" class="uk-section uk-section-small">
+            <div class="uk-container uk-container-small">
+                <div class="uk-grid uk-grid-medium uk-flex uk-flex-middle">
+                    <div class="uk-background-secondary uk-light uk-padding uk-text-large">
+                        <img data-src="cover.png" width="330" height="auto" alt="Book cover" uk-img offsetLeft="0" class="uk-align-left uk-margin-remove-adjacent">
+                        <h1 class="uk-text-bold">
+                            Lantern
+                        </h1>
+                                                <p class="uk-text-lead uk-text-italic">A Digital Publishing Toolkit for Open Textbooks</p>
+                                                <p class="uk-text-small">Chris Diaz, Lauren McKeen McDonald</p>
+                        <p>This guide introduces and demonstrates a minimal computing approach to producing open textbooks using free and open source software.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <main class="uk-section uk-article">
-        <div class="uk-container uk-container-small uk-text-large">
+        </section>
+
+
+        <div id="begin" class="uk-container uk-container-small uk-text-large">
             <section id="introduction" class="level2">
             <h2>Introduction</h2>
             <div class="summary">
@@ -224,6 +226,7 @@
             <h2>Appendix: Microsoft Word Styles</h2>
             </section>
         </div>
+
     </main>
 
         

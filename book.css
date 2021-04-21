@@ -37,6 +37,11 @@ a {
     font-size: 0.875rem;
 }
 
+#toc a {
+  font-weight: normal;
+  font-size: 1.15em;
+}
+
 .objectives {
     position: relative;
     box-sizing: border-box;
@@ -284,3 +289,26 @@ h3 {
 .uk-text-small {
   font-size: 1rem;
 }
+
+.uk-button {
+  margin: 0;
+  border: 1px solid #e5e5e5
+  overflow: visible;
+  font: inherit;
+  color: inherit;
+  font-weight: bold;
+  text-transform: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 30px;
+  vertical-align: middle;
+  line-height: 38px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.1s ease-in-out;
+  transition-property: color, background-color, border-color;
+}
+
