@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-US">
     <head>
         <meta charset="utf-8" />
         <meta name="generator" content="pandoc" />
@@ -15,7 +15,7 @@
                 <!-- Bibliographic Metadata -->
         <meta name="citation_title" content="Lantern">
         <meta name="citation_year" content="">
-        <meta name="citation_language" content="">
+        <meta name="citation_language" content="en-US">
                 <meta name="citation_publisher" content="Northwestern University Libraries">
         <meta name="citation_isbn" content="">
                 <meta name="citation_author" content="Chris Diaz">
@@ -74,8 +74,14 @@
                                 <li><a href="#markdown-adding-structure-to-documents">Markdown: Adding Structure to Documents</a></li>
                                 <li><a href="#pandoc-building-textbook-editions">Pandoc: Building Textbook Editions</a></li>
                                 </ul></li>
+                                <li><a href="#bibliographic-citations">Bibliographic Citations</a>
+                                <ul>
+                                <li><a href="#in-text-citations">In-text Citations</a></li>
+                                <li><a href="#bibliographic-data-files">Bibliographic Data Files</a></li>
+                                </ul></li>
                                 <li><a href="#appendix-markdown-tutorial">Appendix: Markdown Tutorial</a></li>
                                 <li><a href="#appendix-microsoft-word-styles">Appendix: Microsoft Word Styles</a></li>
+                                <li><a href="#bibliography">References</a></li>
                                 </ul>
                     </div>
     </nav>
@@ -198,7 +204,7 @@
             <section id="markdown-adding-structure-to-documents" class="level3">
             <h3>Markdown: Adding Structure to Documents</h3>
             <blockquote>
-            <p>The idea is to identify logical structures in your document (a title, sections, subsections, footnotes, etc.), mark them with some unobtrusive characters, and then “compile” the resulting text with a typesetting interpreter which will format the document consistently, according to a specified style. <em>– Dennis Tenen and Grant Wythoff, “<a href="https://doi.org/10.46430/phen0041">Sustainable Authorship in Plain Text using Pandoc and Markdown</a>,” The Programming Historian 3 (2014).</em></p>
+            <p>The idea is to identify logical structures in your document (a title, sections, subsections, footnotes, etc.), mark them with some unobtrusive characters, and then “compile” the resulting text with a typesetting interpreter which will format the document consistently, according to a specified style. <span class="citation" data-cites="tenen_sustainable_2014">(<a href="#ref-tenen_sustainable_2014" role="doc-biblioref">Tenen and Wythoff 2014</a>)</span></p>
             </blockquote>
             <p>Markdown provides big benefits to open textbook publishers:</p>
             <ol type="1">
@@ -206,7 +212,7 @@
             <li>Markdown files can be opened on any device with any operating system, providing more stability and longevity than proprietary file formats</li>
             </ol>
             <blockquote>
-            <p>Plain text files have many advantages over other formats. For one, they are readable on virtually all devices. They have also withstood the test of time better than other file types – if you’ve ever tried to open a document saved in a legacy word processor format, you’ll be familiar with the compatibility challenges involved. <em>– Sarah Simpkin, “<a href="https://doi.org/10.46430/phen0046">Getting Started with Markdown</a>,” The Programming Historian 4 (2015).</em></p>
+            <p>Plain text files have many advantages over other formats. For one, they are readable on virtually all devices. They have also withstood the test of time better than other file types – if you’ve ever tried to open a document saved in a legacy word processor format, you’ll be familiar with the compatibility challenges involved.<span class="citation" data-cites="simpkin_getting_2015">(<a href="#ref-simpkin_getting_2015" role="doc-biblioref">Simpkin 2015</a>)</span></p>
             </blockquote>
             <p>You can create and edit Markdown files using a text editor. Every operating system includes a default plain text editor. On Windows, the default editor is <a href="https://www.microsoft.com/en-us/p/windows-notepad/9msmlrh6lzf3?activetab=pivot:overviewtab">Notepad</a>; on macOS, the default editor is <a href="https://support.apple.com/guide/textedit/welcome/mac">TextEdit</a>. Both of these options will work, as well as any other text editor, but we recommend installing <a href="https://code.visualstudio.com/">Visual Studio Code (VS Code)</a>, which is free for Windows, macOS, and Linux.</p>
             </section>
@@ -214,6 +220,72 @@
             <h3>Pandoc: Building Textbook Editions</h3>
             <p><a href="https://pandoc.org/">Pandoc</a> is the primary document processing software that Lantern uses to convert manuscript files into textbook editions. Pandoc was designed to be a “universal document converter” that works between markup formats.</p>
             <p>Pandoc is strictly a command line tool, but if you’re using the <strong>online</strong> production workflow, you won’t need to install or interact with Pandoc directly. Instead, everything will be pre-configured in the GitHub template repository for using Pandoc with <a href="https://github.com/features/actions">GitHub Actions</a> on the fly.</p>
+            </section>
+            </section>
+            <section id="bibliographic-citations" class="level2">
+            <h2>Bibliographic Citations</h2>
+            <p>Lantern supports the automatic generation of citations and bibliographies. Citations are rendered using the <a href="https://docs.citationstyles.org/en/stable/specification.html">Citation Style Language</a> specification. By default, Lantern uses the <a href="https://chicagomanualofstyle.org/">Chicago Manual of Style</a> author-date format.</p>
+            <p><strong>Requirements</strong></p>
+            <ul>
+            <li>Textbook chapters containing in-text citations</li>
+            <li>A bibliographic data file</li>
+            <li></li>
+            </ul>
+            <section id="in-text-citations" class="level3">
+            <h3>In-text Citations</h3>
+            <p>Within the markdown chapter files (<code>/chapters/</code>), citations go inside square brackets and are separated by semicolons. Each citation must have a unique identifier that is composed of <code>@</code> + the citation identifier from the bibliographic data file. The citation key must begin with a letter, digit, or <code>_</code>, and may contain alphanumerics, <code>_</code>, and internal punctuation characters (<code>:.#$%&amp;-+?&lt;&gt;~/</code>). Here are some examples:</p>
+            <pre><code>Blah blah [see @doe99, pp. 33-35; also @smith04, chap. 1].
+
+            Blah blah [@doe99, pp. 33-35, 38-39 and *passim*].
+
+            Blah blah [@smith04; @doe99].</code></pre>
+            <p>For more information about in-text citation formatting, see <a href="https://pandoc.org/MANUAL.html#extension-citations">Pandoc’s citation syntax documentation</a>.</p>
+            </section>
+            <section id="bibliographic-data-files" class="level3">
+            <h3>Bibliographic Data Files</h3>
+            <p>We recommend storing bibliographic references in separate files stored in the root of your project’s directory. Lantern provides <code>references.bib</code> for you to add your textbook’s bibliographic data. You can add to this file manually or supply your own file. A bibliography may have any of these machine-readable formats:</p>
+            <table>
+            <thead>
+            <tr class="header">
+            <th>Format</th>
+            <th>File extension</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>BibLaTeX</td>
+            <td><code>.bib</code></td>
+            </tr>
+            <tr class="even">
+            <td>BibTeX</td>
+            <td><code>.bibtex</code></td>
+            </tr>
+            <tr class="odd">
+            <td>CSL JSON</td>
+            <td><code>.json</code></td>
+            </tr>
+            <tr class="even">
+            <td>CSL YAML</td>
+            <td><code>.yaml</code></td>
+            </tr>
+            </tbody>
+            </table>
+            <section id="creating-your-bibiliography" class="level4">
+            <h4>Creating Your Bibiliography</h4>
+            <p>The easiest way to format a citation for machine-readability is to search for the item in <a href="https://scholar.google.com/">Google Scholar</a>, click on the citation button, then select the <code>BibTeX</code> option. This will render the <code>BibTeX</code> citation in your web browser for you to copy and paste into <code>references.bibtex</code> file.</p>
+            <p>Here’s an example of a <code>BibTeX</code> citation:</p>
+            <pre><code>@article{krewinkel2017formatting,
+              title={Formatting Open Science: agilely creating multiple document formats for academic manuscripts with Pandoc Scholar},
+              author={Krewinkel, Albert and Winkler, Robert},
+              journal={PeerJ computer science},
+              volume={3},
+              pages={e112},
+              year={2017},
+              publisher={PeerJ Inc.}
+            }</code></pre>
+            <p>Most reference management software will let you export your bibliographies as a file in one or more of these formats. We recommend either the <code>.bib</code> or <code>.bibtex</code> formats for best results. After your export the file, you can either copy and paste the text to the <code>references.bibtex</code> file, or add the file itself to your project directory.</p>
+            <p>If the bibliography you use has a different file name than <code>references.bib</code>, you’ll need to edit the <code>Makefile</code> entry for <code>BIBLIOGRAPHY</code> to point to your new bibiliography file. For example, if I wanted to use a bibiliography file called <code>textbook.yaml</code>, I would edit the <code>Makefile</code> to specify: <code>BIBLIOGRAPHY = textbook.yaml</code>.</p>
+            </section>
             </section>
             </section>
             <section id="appendix-markdown-tutorial" class="level2">
@@ -224,6 +296,17 @@
             </section>
             <section id="appendix-microsoft-word-styles" class="level2">
             <h2>Appendix: Microsoft Word Styles</h2>
+            </section>
+            <section id="bibliography" class="level1 unnumbered">
+            <h1 class="unnumbered">References</h1>
+            <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+            <div id="ref-simpkin_getting_2015" class="csl-entry" role="doc-biblioentry">
+            Simpkin, Sarah. 2015. <span>“Getting <span>Started</span> with <span>Markdown</span>.”</span> <em>Programming Historian</em>, November. <a href="https://programminghistorian.org/en/lessons/getting-started-with-markdown">https://programminghistorian.org/en/lessons/getting-started-with-markdown</a>.
+            </div>
+            <div id="ref-tenen_sustainable_2014" class="csl-entry" role="doc-biblioentry">
+            Tenen, Dennis, and Grant Wythoff. 2014. <span>“Sustainable <span>Authorship</span> in <span>Plain</span> <span>Text</span> Using <span>Pandoc</span> and <span>Markdown</span>.”</span> <em>Programming Historian</em>, March. <a href="https://programminghistorian.org/en/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown">https://programminghistorian.org/en/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown</a>.
+            </div>
+            </div>
             </section>
         </div>
 
