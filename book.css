@@ -365,3 +365,9 @@ figcaption {
     font-size: 16px;
     line-height: 1.4;
    }
+
+/* adds padding to prevent conflict with nav bar */
+
+:is(h2, h3, h4, h5, h6) {
+  padding-top: 90px;
+}
