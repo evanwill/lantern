@@ -1,4 +1,4 @@
-/*  This file overrides styles set by the UIKit library (`assets/uikit.css`). It's really just the same styles copied over and applied to directly elements, ids, and classes produced by Pandoc */
+/*  This file overrides styles set by UIKit CSS (in `assets/lib/uikit.css`). It's really just the same styles copied over, possibly modified, and applied directly to elements, ids, and classes produced by Pandoc */
 
 html {
     /* 1 */
@@ -126,22 +126,10 @@ details summary {
   margin: 3rem 0;
 }
 
-
-/* ========================================================================
-   Component: Table
- ========================================================================== */
-/*
- * 1. Remove most spacing between table cells.
- * 2. Behave like a block element
- * 3. Style
- */
- table {
-  /* 1 */
+table {
   border-collapse: collapse;
   border-spacing: 0;
-  /* 2 */
   width: 100%;
-  /* 3 */
   margin-bottom: 20px;
 }
 /* Add margin if adjacent element */
@@ -149,11 +137,6 @@ details summary {
   margin-top: 20px;
 }
 
-/* Header cell
- ========================================================================== */
-/*
- * 1. Style
- */
 table th {
   padding: 16px 12px;
   text-align: left;
@@ -161,31 +144,31 @@ table th {
   /* 1 */
   font-size: 0.875rem;
   font-weight: normal;
-  color: #999;
+  color: #4f5a65;
   text-transform: uppercase;
 }
-/* Cell
- ========================================================================== */
+
 table td {
   padding: 16px 12px;
   vertical-align: top;
+  font-size: 1rem;
 }
-/*
- * Remove margin from the last-child
- */
+
 table td > :last-child {
   margin-bottom: 0;
 }
 
-/* Caption
- ========================================================================== */
-table caption {
+table tfoot {
   font-size: 0.875rem;
-  text-align: left;
-  color: #999;
+}
+
+table caption {
+  font-size: 1rem;
   font-weight: bold;
+  text-align: left;
+  color: #4f5a65;
+  padding: 16px 12px;
   text-transform: uppercase;
-  text-align: right;
 }
 
 table caption::before {
@@ -328,7 +311,7 @@ figure img {
 figcaption {
   font-size: 80%;
   line-height: 1.4;
-  color: #999;
+  color: #4f5a65;
   text-align: center;
 }
 
@@ -370,4 +353,63 @@ figcaption {
 
 :is(h2, h3, h4, h5, h6) {
   padding-top: 90px;
+}
+
+code {
+  font-family: Consolas, monaco, monospace;
+  color: #f0506e;
+  white-space: nowrap;
+  padding: 2px 6px;
+  background: #f8f8f8;
+  font-size: inherit;
+}
+
+:not(pre) > code {
+  font-family: Consolas, monaco, monospace;
+  color: #f0506e;
+  white-space: nowrap;
+  padding: 2px 6px;
+  background: #f8f8f8;
+  font-size: inherit;
+}
+
+table code {
+  font-size: 1rem;
+}
+
+em {
+  color:inherit;
+}
+
+.aside {
+  position: relative;
+  margin: 1.5em;
+  padding: 15px 29px 15px 15px;
+  background: #f8f8f8;
+  color: #34515e;
+}
+
+.aside p {
+  font-size: smaller;
+}
+
+/* Add margin if adjacent element */
+* + .aside {
+  margin-top: 20px;
+}
+/*
+ * Remove margin from the last-child
+ */
+.aside > :last-child {
+  margin-bottom: 0;
+}
+
+ol, ul {
+  padding-left: 30px;
+  margin-top: 10px;
+  counter-reset: decimal;
+}
+
+ol li, ul li {
+  font-size: smaller;
 }
