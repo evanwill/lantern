@@ -1,0 +1,486 @@
+\documentclass[
+  11pt,
+,
+onecolumn,
+openany
+]{book}
+
+% Standard Packages %
+\usepackage[colorlinks]{hyperref}
+\usepackage{longtable,booktabs,array}
+
+
+% figures %
+\usepackage{graphicx}
+% Redefine \includegraphics so that, unless explicit options are
+% given, the image width will not exceed the width or the height of the page.
+% Images get their normal width if they fit onto the page, but
+% are scaled down if they would overflow the margins.
+\makeatletter
+\def\ScaleWidthIfNeeded{%
+ \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\def\ScaleHeightIfNeeded{%
+  \ifdim\Gin@nat@height>0.9\textheight
+    0.9\textheight
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\setkeys{Gin}{width=\ScaleWidthIfNeeded,height=\ScaleHeightIfNeeded,keepaspectratio}%
+
+% Math Packages %
+\usepackage{amsmath,amssymb}
+\usepackage{ntheorem}
+
+% Load mdframed package for styling content blocks %
+\usepackage{xcolor}
+\usepackage[framemethod=default,backgroundcolor=lightgray]{mdframed}
+
+% Summary Content Block Styles %
+\newenvironment{learning-objectives}
+{\begin{mdframed}}
+{\end{mdframed}}
+
+% Pandoc LaTeX Configurations %
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+    \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+% Code Block Shading %
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+
+% Load Fonts %
+\usepackage[osf,p]{libertinus}
+
+% Textbook Metadata %
+
+\title{Title}
+\author{First Author \and Second Author}
+\date{}
+
+\begin{document}
+
+
+\maketitle
+
+\pagestyle{empty}
+
+%% copyright page
+
+\begingroup
+\footnotesize
+\parindent 0pt
+\parskip \baselineskip
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque
+porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
+nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex
+ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
+voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem
+eum fugiat quo voluptas nulla pariatur?
+
+\textcopyright{}  First Author \and Second Author \\
+All rights reserved.
+
+This work may be distributed and/or modified under the conditions
+of the cc0 License.
+
+\begin{center}
+ 99 32 11 88 48 01\hspace{2em}9 9 8 6 5 4 %1 
+\end{center}
+
+\begin{center}
+\begin{tabular}{ll}
+First edition:  & May 2013 \\
+Second impression, with minor extensions & January 2009 \\
+Third impression, with minor extensions & May 2013 
+\end{tabular}
+\end{center}
+
+\vfill
+
+Catalogging in publication data
+
+
+\vfill
+
+Publishing Organization, \\
+Evanston, IL \\
+\texttt{https://www.library.northwestern.edu}
+
+%%%%{\LARGE\plogo}
+\vspace*{2\baselineskip}
+
+
+\endgroup
+\clearpage
+
+
+\renewcommand*\contentsname{Contents}
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
+
+\begin{authors}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{First Author}, \emph{Affiliation}
+\item
+  \textbf{Second Author}, \emph{Affiliation}
+\end{itemize}
+
+\end{authors}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{learning-objectives}
+
+\textbf{Learning Objectives}
+
+\begin{itemize}
+\tightlist
+\item
+  Objective
+\item
+  Objective
+\item
+  Objective
+\end{itemize}
+
+\end{learning-objectives}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{introduction-1}{%
+\section{Introduction}\label{introduction-1}}
+
+Soup cranberry spritzer edamame hummus figs tomato and basil Bolivian rainbow
+pepper chili pepper vine tomatoes ultimate avocado dressing drizzle summer
+fruit salad. Peanut butter crunch coconut dill plums morning smoothie bowl
+strawberries spiced peppermint blast crunchy seaweed mangos green tea. Eating
+together dark chocolate pine nuts red curry tofu noodles lychee chocolate
+cookie red amazon pepper orange mediterranean luxury bowl hearts of palm
+Italian linguine puttanesca lemon tahini dressing picnic salad walnut mushroom
+tart almonds pumpkin.
+
+\hypertarget{tbl:variables}{}
+\begin{longtable}[]{@{}lll@{}}
+\caption{\label{tbl:variables}This is an example table.}\tabularnewline
+\toprule
+Variable & Abbreviation & Definition \\
+\midrule
+\endfirsthead
+\toprule
+Variable & Abbreviation & Definition \\
+\midrule
+\endhead
+\(n\) & AAA & thing \\
+\(x\) & BBB & thing \\
+\(1\) & CCC & thing \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{math}{%
+\section{Math}\label{math}}
+
+\emph{Courtesy of \href{https://www.mathjax.org/\#samples}{MathJax}}
+
+The Quadratic Formula:
+
+\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
+
+Cauchy's Integral Formula:
+
+\[f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz\]
+
+Standard Deviation:
+
+\[\sigma = \sqrt{ \frac{1}{N} \sum_{i=1}^N (x_i -\mu)^2}\]
+
+\hypertarget{bibiliographic-references}{%
+\subsection{Bibiliographic References}\label{bibiliographic-references}}
+
+Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette
+tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato.
+Dandelion cucumber earthnut pea peanut soko zucchini {[}@lantern{]}.
+
+Soup cranberry spritzer edamame hummus figs tomato and basil Bolivian rainbow
+pepper chili pepper vine tomatoes ultimate avocado dressing drizzle summer
+fruit salad. Peanut butter crunch coconut dill plums morning smoothie bowl
+strawberries spiced peppermint blast crunchy seaweed mangos green tea. Eating
+together dark chocolate pine nuts red curry tofu noodles lychee chocolate
+cookie red amazon pepper orange mediterranean luxury bowl hearts of palm
+Italian linguine puttanesca lemon tahini dressing picnic salad walnut mushroom
+tart almonds pumpkin.
+
+\hypertarget{figure-images}{%
+\section{Figure Images}\label{figure-images}}
+
+This is the first subsection. Please, admire the gloriousnes of this graph:
+
+\begin{figure}
+\hypertarget{fig:graph}{%
+\centering
+\includegraphics{graph.png}
+\caption{A cool graph}\label{fig:graph}
+}
+\end{figure}
+
+\hypertarget{tables}{%
+\section{Tables}\label{tables}}
+
+Tables need to be finalized \emph{before} they are formatted in Markdown. It
+is recommended to use a
+\href{https://www.tablesgenerator.com/markdown_tables}{Markdown table
+generator}, rather than formatting tables in Markdown by hand. Some Markdown
+table generators will allow you to
+\href{https://jakebathman.github.io/Markdown-Table-Generator/}{import tables
+created in Excel or CSV formats}.
+
+\begin{longtable}[]{@{}ll@{}}
+\caption{This is an example table.}\tabularnewline
+\toprule
+Index & Name \\
+\midrule
+\endfirsthead
+\toprule
+Index & Name \\
+\midrule
+\endhead
+0 & AAA \\
+1 & BBB \\
+2 & CCC \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{more-elements}{%
+\section{More Elements}\label{more-elements}}
+
+\hypertarget{math-1}{%
+\subsection{Math}\label{math-1}}
+
+Formula example: \(\mu = \sum_{i=0}^{N} \frac{x_i}{N}\)
+
+Now, full size (with an equation label):
+
+\begin{equation}\protect\hypertarget{eq:equation}{}{\mu = \sum_{i=0}^{N} \frac{x_i}{N}}\label{eq:equation}\end{equation}
+
+\hypertarget{code}{%
+\subsection{Code}\label{code}}
+
+And a code sample:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{def}\NormalTok{ hello\_world}
+  \FunctionTok{puts} \StringTok{"hello world!"}
+\ControlFlowTok{end}
+
+\NormalTok{hello\_world}
+\end{Highlighting}
+\end{Shaded}
+
+Check these unicode characters: ǽß¢ð€đŋμ
+
+\hypertarget{example-chapter}{%
+\chapter{Example Chapter}\label{example-chapter}}
+
+\begin{authors}
+
+\textbf{Author} \emph{Affiliation} Email:
+\href{mailto:email@domain.edu}{\nolinkurl{email@domain.edu}}
+
+\end{authors}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{learning-objectives}
+
+\textbf{Learning Objectives}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  item
+\item
+  item
+\item
+  item
+\end{enumerate}
+
+\end{learning-objectives}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{introduction-2}{%
+\section{Introduction}\label{introduction-2}}
+
+Soup cranberry spritzer edamame hummus figs tomato and basil Bolivian rainbow
+pepper chili pepper vine tomatoes ultimate avocado dressing drizzle summer
+fruit salad. Peanut butter crunch coconut dill plums morning smoothie bowl
+strawberries spiced peppermint blast crunchy seaweed mangos green tea. Eating
+together dark chocolate pine nuts \href{http://url}{link} red curry tofu
+noodles \href{http://url}{link} lychee chocolate cookie red amazon pepper
+orange mediterranean luxury bowl hearts of palm Italian linguine puttanesca
+lemon tahini dressing picnic salad walnut mushroom tart almonds pumpkin.
+
+\hypertarget{subsection}{%
+\subsection{Subsection}\label{subsection}}
+
+Cumin blueberry chia seed jam raspberry fizz banana bread blueberries red
+pepper ghost pepper banh mi salad rolls crispy peppermint walnut pesto tart
+sweet potato apricot. Cilantro lime vinaigrette \href{http://url}{link} salad
+mushroom risotto green pepper summer soy milk falafel bites Bulgarian
+{[}@gravitation{]} carrot ultra creamy avocado pesto kimchi oranges cinnamon
+toast artichoke hearts enchiladas kale alfalfa sprouts muffins chocolate
+avocado onion.
+
+\begin{figure}
+\hypertarget{fig:gravitation}{%
+\centering
+\includegraphics{https://upload.wikimedia.org/wikipedia/commons/a/a5/Gravitation.gif}
+\caption{Gravitation}\label{fig:gravitation}
+}
+\end{figure}
+
+Bananas casserole macadamia nut cookies sweet potato black bean burrito
+sandwiches balsamic vinaigrette picnic vitamin glow parsley winter crumbled
+lentils lemon red lentil soup Thai curry açai. Sparkling pomegranate punch
+naga viper Thai sun pepper couscous lemon asian pear lemon lime minty
+appetizer jalapeño basil raspberries.
+
+\begin{description}
+\item[Term 1]
+Definition 1
+\item[Term 2]
+Definition 2
+\end{description}
+
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
+
+Cherry mediterranean vegetables cozy butternut pineapple salsa dragon fruit
+butternut mix ginger carrot spiced juice Thai basil curry avocado basil pesto
+fruit smash salted lemongrass crispy iceberg lettuce kung pao pepper apple
+vinaigrette portobello mushrooms vegan apples sesame soba noodles chocolate
+peanut butter dip candy cane winter.
+
+\begin{itemize}
+\tightlist
+\item
+  cool Thai super
+\item
+  chili maple orange
+\item
+  tempeh basmati
+\end{itemize}
+
+Scotch bonnet pepper Malaysian ginger lemongrass agave green tea entree
+shallots chia seeds spring peaches tempeh veggie burgers cool cucumbers
+overflowing cilantro cherry bomb cocoa a delicious meal creamy cauliflower
+alfredo sauce.
+
+\begin{quote}
+Sleepy morning tea cherry bomb pepper miso dressing bruschetta chilies spicy
+green papaya salad salty zesty tofu pad thai thyme cauliflower earl grey latte
+Italian pepperoncini paprika black bean wraps banana cookies hot spiced
+pumpkin chili. Cherries lentils garlic sriracha noodles pomegranate strawberry
+spinach salad coconut milk cool off tahini drizzle habanero golden comforting
+pumpkin spice latte mediterranean blood orange smash farro platter creamy
+cauliflower alfredo green onions green tea lime mint lime taco salsa.
+\end{quote}
+
+\hypertarget{cross-references}{%
+\subsection{Cross references}\label{cross-references}}
+
+These cross references are disabled by default. To enable them, check the
+\emph{\href{https://github.com/wikiti/pandoc-book-template\#cross-references}{Cross
+references}} section on the README.md file.
+
+Here's a list of cross references:
+
+\begin{itemize}
+\tightlist
+\item
+  Check fig.~\ref{fig:graph}.
+\item
+  Check tbl.~\ref{tbl:variables}.
+\item
+  Check eq.~\ref{eq:equation}.
+\end{itemize}
+
+\hypertarget{bibliography}{%
+\chapter*{References}\label{bibliography}}
+\addcontentsline{toc}{chapter}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-lantern}{}}%
+Diaz, Chris. 2021. {``Lantern.''} Northwestern University Libraries.
+
+\end{CSLReferences}
+
+
+\end{document}
