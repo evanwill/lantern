@@ -427,3 +427,11 @@ iframe {
   display: block;
   margin: auto;
 }
+
+#metadata dt {
+  color: #fff;
+}
+
+#metadata dd {
+  font-size: 0.875rem;
+}
