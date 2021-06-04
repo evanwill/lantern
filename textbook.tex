@@ -37,16 +37,10 @@ openany
 
 % Math Packages %
 \usepackage{amsmath,amssymb}
-\usepackage{ntheorem}
 
-% Load mdframed package for styling content blocks %
+% Load framed package for styling content blocks %
 \usepackage{xcolor}
-\usepackage[framemethod=default,backgroundcolor=lightgray]{mdframed}
-
-% Summary Content Block Styles %
-\newenvironment{learning-objectives}
-{\begin{mdframed}}
-{\end{mdframed}}
+\usepackage{framed}
 
 % Pandoc LaTeX Configurations %
 \providecommand{\subtitle}[1]{% add subtitle to \maketitle
@@ -99,7 +93,7 @@ openany
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
 
 % Load Fonts %
-\usepackage[osf,p]{libertinus}
+\usepackage{lmodern}
 
 % Textbook Metadata %
 
@@ -188,6 +182,8 @@ Evanston, IL \\
 \chapter{Introduction to Vegetable
 Lasagna}\label{introduction-to-vegetable-lasagna}}
 
+\begin{shaded*}
+
 \begin{itemize}
 \tightlist
 \item
@@ -196,7 +192,11 @@ Lasagna}\label{introduction-to-vegetable-lasagna}}
   \textbf{Second Author}, \emph{Affiliation}
 \end{itemize}
 
+\end{shaded*}
+
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{shaded*}
 
 \textbf{Learning Objectives}
 
@@ -209,6 +209,8 @@ Lasagna}\label{introduction-to-vegetable-lasagna}}
 \item
   Objective
 \end{itemize}
+
+\end{shaded*}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -346,10 +348,16 @@ Check these unicode characters: ǽß¢ð€đŋμ
 \hypertarget{example-chapter}{%
 \chapter{Example Chapter}\label{example-chapter}}
 
+\begin{shaded*}
+
 \textbf{Author} \emph{Affiliation} Email:
 \href{mailto:email@domain.edu}{\nolinkurl{email@domain.edu}}
 
+\end{shaded*}
+
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{shaded*}
 
 \textbf{Learning Objectives}
 
@@ -363,6 +371,8 @@ Check these unicode characters: ǽß¢ð€đŋμ
 \item
   item
 \end{enumerate}
+
+\end{shaded*}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -403,12 +413,16 @@ lentils lemon red lentil soup Thai curry açai. Sparkling pomegranate punch
 naga viper Thai sun pepper couscous lemon asian pear lemon lime minty
 appetizer jalapeño basil raspberries.
 
+\begin{shaded*}
+
 \begin{description}
 \item[Term 1]
 Definition 1
 \item[Term 2]
 Definition 2
 \end{description}
+
+\end{shaded*}
 
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
