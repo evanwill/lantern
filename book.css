@@ -53,21 +53,6 @@ ul > * > ul {
     margin-top: 10px;
 }
 
-pre {
-    color: #666;
-    -moz-tab-size: 4;
-    tab-size: 4;
-    overflow: auto;
-    padding: 25px;
-    border: 0 solid #e5e5e5;
-    border-radius: 0;
-    background: #f8f8f8;
-}
-
-pre code {
-    font-family: 'Roboto Mono', monospace;
-}
-
 /* Callout Boxes */
 
 .box {
@@ -316,6 +301,7 @@ figure {
   background: #fff;
   color: #666;
   box-shadow: 0 5px 15px rgb(0 0 0 / 8%);
+  padding: 1em 1em;
 }
 
 figure img {
@@ -328,6 +314,7 @@ figcaption {
   line-height: 1.4;
   color: #4f5a65;
   text-align: center;
+  margin-top: 1em;
 }
 
  /*
@@ -377,30 +364,40 @@ figcaption {
   padding-bottom: 5px;
 }
 
+/* Code */
+
+pre {
+  -moz-tab-size: 4;
+  tab-size: 4;
+  overflow: auto;
+  padding: 1.5em;
+  border: 0 solid #e5e5e5;
+  border-radius: 0;
+  background: #f8f8f8;
+}
+
 code {
   font-family: Consolas, monaco, monospace;
-  color: #f0506e;
+  color: #3a539b;
   white-space: nowrap;
   padding: 2px 6px;
-  background: #f8f8f8;
   font-size: inherit;
+  font-weight: bold;
 }
 
 :not(pre) > code {
-  font-family: Consolas, monaco, monospace;
-  color: #f0506e;
-  white-space: nowrap;
-  padding: 2px 6px;
-  background: #f8f8f8;
-  font-size: inherit;
-}
+    font-size: inherit;
+    color: #3a539b;
+    white-space: nowrap;
+    padding: 2px 6px;
+    background: #f8f8f8;
 
 table code {
   font-size: 1rem;
 }
 
 em {
-  color:inherit;
+  color: #1b1b1b;
 }
 
 .aside {
