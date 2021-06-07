@@ -74,9 +74,10 @@ pre code {
   position: relative;
   box-sizing: border-box;
   transition: box-shadow 0.1s ease-in-out;
-  background: #fff;
+  background: #e4f1fe;
   color: #666;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  padding: 2em 2em;
 }
 
 .authors {
