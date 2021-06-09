@@ -367,9 +367,7 @@ pre {
   tab-size: 4;
   overflow: auto;
   padding: 1.5em;
-  border: 0 solid #e5e5e5;
-  border-radius: 0;
-  background: #f8f8f8;
+  background: #dadfe1;
 }
 
 code {
@@ -385,7 +383,7 @@ code {
     color: #3a539b;
     white-space: nowrap;
     padding: 2px 6px;
-    background: #f8f8f8;
+    background: #dadfe1;
 
 table code {
   font-size: 1rem;
@@ -428,7 +426,7 @@ ol li, ul li {
   font-size: smaller;
 }
 
-iframe {
+section iframe {
   display: block;
   margin: auto;
 }
