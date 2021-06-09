@@ -1,127 +1,187 @@
-\documentclass[
-  11pt,
-,
-onecolumn,
-openany
-]{book}
+\documentclass{book}
 
-% Standard Packages %
-\usepackage[colorlinks]{hyperref}
-\usepackage{longtable,booktabs,array}
+\title{Title}
+\newcommand{\subtitle}{Subtitle}
+\newcommand{\booklicense}{Creative Commons Attribution 4.0 International (CC
+BY 4.0)}
 
+% authors %
+\author{ \and }
+\newcommand{\authoraffiliation}{}
 
-% figures %
-\usepackage{graphicx}
-% Redefine \includegraphics so that, unless explicit options are
-% given, the image width will not exceed the width or the height of the page.
-% Images get their normal width if they fit onto the page, but
-% are scaled down if they would overflow the margins.
+% Create convenient commands \booktitle and \bookauthor
 \makeatletter
-\def\ScaleWidthIfNeeded{%
- \ifdim\Gin@nat@width>\linewidth
-    \linewidth
-  \else
-    \Gin@nat@width
-  \fi
-}
-\def\ScaleHeightIfNeeded{%
-  \ifdim\Gin@nat@height>0.9\textheight
-    0.9\textheight
-  \else
-    \Gin@nat@width
-  \fi
-}
+\newcommand{\booktitle}{\@title}
+\newcommand{\bookauthor}{\@author}
 \makeatother
 
-\setkeys{Gin}{width=\ScaleWidthIfNeeded,height=\ScaleHeightIfNeeded,keepaspectratio}%
+% This utf8 declaration is not needed for versions of latex > 2018 but may
+% be helpful for older software. Eventually it may not be worth keeping.
+%\usepackage[utf8]{inputenc}  
 
-% Math Packages %
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath} % Used by equations
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth}
 
-% Load framed package for styling content blocks %
-\usepackage{xcolor}
-\usepackage{framed}
-\definecolor{shadecolor}{rgb}{248,248,248}
+% The following dimensions specify 4.75" X 7.5" content on 6 3/8" by 9 1/4"
+% paper. The paper width and height can be tweaked as required and the content
+% should size to fit within the margins accordingly.
+%
+% The (inside) bindingoffset should be larger for books with more pages. Some
+% standard recommended sizes are .375in minimum up to 1in for 600+ page books.
+% Sizes .75in and .875in are also recommended roughly at 150 and 400 pages.
+\usepackage[bindingoffset=1in,
+            left=1in, right=1in,
+            top=1in, bottom=1in,
+            paperwidth=8.27in, paperheight=11.69in]{geometry}
+% Here is an alternative geometry for reading on letter size paper:
+% \usepackage[margin=.75in, paperwidth=8.5in, paperheight=11in]{geometry}
 
-% Pandoc LaTeX Configurations %
-\providecommand{\subtitle}[1]{% add subtitle to \maketitle
-  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
-}
+\renewcommand{\contentsname}{Contents} 
 
+% pandoc settings %
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-    \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\newenvironment{Shaded}{
+    \begin{center}
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+}
 
-% Code Block Shading %
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\newenvironment{Shaded}{}{}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
-
-% Load Fonts %
-\usepackage{lmodern}
-
-% Textbook Metadata %
-
-\title{Title}
-\author{First Author \and Second Author}
-\date{}
-
-% CSL References %
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
-\newenvironment{CSLReferences}%
-  {}%
-  {\par}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
+
+% Content Starts Here
 \begin{document}
+\frontmatter
+
+% ---- Half Title Page ----
+% current geometry will be restored after title page
+\newgeometry{top=1.75in,bottom=.5in}
+\begin{titlepage}
+\begin{flushleft}
+
+% Title
+\textbf{\fontsize{48}{54}\selectfont Title \\}
+\textbf{\large \textit{Subtitle}}
+
+% Draw a line 4pt high
+\par\noindent\rule{\textwidth}{4pt}\\
+
+% authors
+\begin{flushright}
+\Large First Edition
+\end{flushright}
+
+% \vspace{\fill}
+\vspace{\fill}
+
+\end{flushleft}
+\end{titlepage}
+\restoregeometry
+% ---- End of Half Title Page ----
 
 
-\maketitle
+% No page numbers on the Frontispiece page
+\thispagestyle{empty}
 
-\pagestyle{empty}
 
-%% copyright page
+% ---- Title Page ----
+% current geometry will be restored after title page
+\newgeometry{top=1.75in,bottom=.5in}
+\begin{titlepage}
+\begin{flushleft}
 
-\begingroup
-\footnotesize
-\parindent 0pt
-\parskip \baselineskip
+% Title
+\textbf{\fontfamily{qcs}\fontsize{48}{54}\selectfont Title\\}
+
+% Draw a line 4pt high
+\par\noindent\rule{\textwidth}{4pt}\\
+
+% Shaded box from left to right with Subtitle
+% The text node is midway (centered).
+%\begin{tikzpicture}
+%\shade[bottom color=lightgray,top color=white]
+%    (0,0) rectangle (\textwidth, 1.5)
+%    node[midway] {\textbf{\large \textit{\booksubtitle}}};
+%\end{tikzpicture}
+
+% Edition Number
+\begin{flushright}
+\Large First Edition
+\end{flushright}
+
+\vspace{\fill}
+
+% Author and Location
+\textbf{\large \author}\\[3.5pt]
+\textbf{\large \textit{\authoraffiliation}}
+
+\vspace{\fill}
+
+% Self Publishing Logo. Free to use: CC0 license.
+% The source file is book.svg. If you change the svg, you must then convert
+% it to pdf. There are many online and offline tools available to do that.
+\begin{center}
+%\includegraphics{booksvg.pdf}\\[4pt]
+\fontfamily{lmtt}\small{Self Publishers Worldwide\\
+Seattle San Francisco New York\\
+London Paris Rome Beijing Barcelona}
+\end{center}
+
+\end{flushleft}
+\end{titlepage}
+\restoregeometry
+% ---- End of Title Page ----
+
+% Do not show page numbers on colophon page
+\thispagestyle{empty}
+
+\begin{flushleft}
+\vspace*{\fill}
+This book was typeset using \LaTeX{} software.\\
+\vspace{\fill}
+Copyright \textcopyright{} \the\year{}  \author\\
+License: \booklicense
+\end{flushleft}
+
+% A title page resets the page # to 1, but the second title page
+% was actually page 3. So add two to page counter.
+\addtocounter{page}{2}
+
+% The asterisk excludes chapter from the table of contents.
+\newpage
 
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
 doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
@@ -136,54 +196,17 @@ ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
 voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem
 eum fugiat quo voluptas nulla pariatur?
 
-\textcopyright{}  First Author \and Second Author \\
-All rights reserved.
+\newpage
 
-This work may be distributed and/or modified under the conditions
-of the true License.
-
-\begin{center}
- 99 32 11 88 48 01\hspace{2em}9 9 8 6 5 4 %1 
-\end{center}
-
-\begin{center}
-\begin{tabular}{ll}
-First edition:  & May 2013 \\
-Second impression, with minor extensions & January 2009 \\
-Third impression, with minor extensions & May 2013 
-\end{tabular}
-\end{center}
-
-\vfill
-
-Catalogging in publication data
-
-
-\vfill
-
-Publishing Organization, \\
-Evanston, IL \\
-\texttt{https://www.library.northwestern.edu}
-
-%%%%{\LARGE\plogo}
-\vspace*{2\baselineskip}
-
-
-\endgroup
-\clearpage
-
-
-\renewcommand*\contentsname{Contents}
-\setcounter{tocdepth}{2}
+% Three-level Table of Contents
+\setcounter{tocdepth}{3}
 \tableofcontents
 
-
+\mainmatter
 
 \hypertarget{introduction-to-vegetable-lasagna}{%
 \chapter{Introduction to Vegetable
 Lasagna}\label{introduction-to-vegetable-lasagna}}
-
-\begin{shaded*}
 
 \begin{itemize}
 \tightlist
@@ -193,11 +216,7 @@ Lasagna}\label{introduction-to-vegetable-lasagna}}
   \textbf{Second Author}, \emph{Affiliation}
 \end{itemize}
 
-\end{shaded*}
-
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\begin{shaded*}
 
 \textbf{Learning Objectives}
 
@@ -210,8 +229,6 @@ Lasagna}\label{introduction-to-vegetable-lasagna}}
 \item
   Objective
 \end{itemize}
-
-\end{shaded*}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -334,31 +351,23 @@ Now, full size (with an equation label):
 
 And a code sample:
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\ControlFlowTok{def}\NormalTok{ hello\_world}
-  \FunctionTok{puts} \StringTok{"hello world!"}
-\ControlFlowTok{end}
+\begin{verbatim}
+def hello_world
+  puts "hello world!"
+end
 
-\NormalTok{hello\_world}
-\end{Highlighting}
-\end{Shaded}
+hello_world
+\end{verbatim}
 
 Check these unicode characters: ǽß¢ð€đŋμ
 
 \hypertarget{example-chapter}{%
 \chapter{Example Chapter}\label{example-chapter}}
 
-\begin{shaded*}
-
 \textbf{Author} \emph{Affiliation} Email:
 \href{mailto:email@domain.edu}{\nolinkurl{email@domain.edu}}
 
-\end{shaded*}
-
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\begin{shaded*}
 
 \textbf{Learning Objectives}
 
@@ -372,8 +381,6 @@ Check these unicode characters: ǽß¢ð€đŋμ
 \item
   item
 \end{enumerate}
-
-\end{shaded*}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -406,16 +413,12 @@ lentils lemon red lentil soup Thai curry açai. Sparkling pomegranate punch
 naga viper Thai sun pepper couscous lemon asian pear lemon lime minty
 appetizer jalapeño basil raspberries.
 
-\begin{shaded*}
-
 \begin{description}
 \item[Term 1]
 Definition 1
 \item[Term 2]
 Definition 2
 \end{description}
-
-\end{shaded*}
 
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
@@ -481,5 +484,5 @@ Diaz, Chris. 2021. {``Lantern.''} Northwestern University Libraries.
 
 \end{CSLReferences}
 
-
+\backmatter
 \end{document}
