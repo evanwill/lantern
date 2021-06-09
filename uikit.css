@@ -91,9 +91,9 @@
   /*
    * Emphasize
    */
-  em {
+  /*em {
     color: #f0506e;
-  }
+  }*/
   /*
    * Insert
    */
@@ -893,7 +893,7 @@
    * Term
    */
   .uk-description-list > dt {
-    color: #333;
+    /* color: #333; */
     font-size: 0.875rem;
     font-weight: normal;
     text-transform: uppercase;

@@ -172,10 +172,6 @@ table caption {
   text-transform: uppercase;
 }
 
-table caption::before {
-    content: "Table: "
-  }
-
 /* Style modifiers
  ========================================================================== */
 /*
@@ -379,7 +375,6 @@ pre {
 code {
   font-family: Consolas, monaco, monospace;
   color: #3a539b;
-  white-space: nowrap;
   padding: 2px 6px;
   font-size: inherit;
   font-weight: bold;
@@ -438,20 +433,8 @@ iframe {
   margin: auto;
 }
 
-#metadata dt {
+#info .uk-description-list > dt {
   color: #fff;
-}
-
-#metadata dd {
-  font-size: 0.875rem;
-}
-
-dl > dt {
-  color: #333;
-  font-size: 0.875rem;
-  font-weight: normal;
-  text-transform: uppercase;
-  font-weight: bold;
 }
 
 dl > dt:nth-child(n+2) {
