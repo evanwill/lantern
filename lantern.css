@@ -1,0 +1,459 @@
+/*  This file overrides styles set by UIKit CSS (in `assets/lib/uikit.css`). It's really just the same styles copied over, possibly modified, and applied directly to elements, ids, and classes produced by Pandoc */
+
+html {
+    /* 1 */
+    font-family: Source Sans Pro Web,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+  }
+
+body {
+  color: #1b1b1b;
+  background-color: #fff;
+}
+
+a {
+  color: #663399;
+  font-weight: bold;
+}
+
+#toc ul {
+    list-style:none;
+    margin: 0;
+    padding: 0;
+  }
+
+#toc ul li {
+    display: block;
+    text-decoration: none;
+    padding: 5px 0;
+    margin: 5px 0;
+}
+
+#toc ul ul {
+    padding-left: 1rem;
+    font-size: 0.875rem;
+}
+
+#toc a {
+  font-weight: normal;
+  font-size: 1.15em;
+}
+
+ul > * > :last-child {
+    margin-bottom: 0;
+}
+  /*
+   * Style
+   */
+ul > :nth-child(n+2),
+ul > * > ul {
+    margin-top: 10px;
+}
+
+section li {
+  font-size: smaller;
+}
+
+/* Callout Boxes */
+
+.box {
+  position: relative;
+  box-sizing: border-box;
+  transition: box-shadow 0.1s ease-in-out;
+  background: #e4f1fe;
+  color: #666;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  padding: 2em 2em;
+}
+
+.box p {
+  font-size: smaller;
+}
+
+.authors {
+  position: relative;
+  box-sizing: border-box;
+  transition: box-shadow 0.1s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  display: flow-root;
+  padding: 30px 30px;
+  background: #e6e6e6;
+  margin: 3rem 0;
+}
+
+.objectives {
+  position: relative;
+  box-sizing: border-box;
+  transition: box-shadow 0.1s ease-in-out;
+  background: #1e87f0;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  display: flow-root;
+  padding: 30px 30px;
+}
+
+.notes {
+  position: relative;
+  box-sizing: border-box;
+  transition: box-shadow 0.1s ease-in-out;
+  background: #222;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  display: flow-root;
+  padding: 30px 30px;
+}
+
+.exercise {
+  position: relative;
+  box-sizing: border-box;
+  transition: box-shadow 0.1s ease-in-out;
+  background: #3f2183;
+  color: #d5d5d5;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  display: flow-root;
+  padding: 30px 30px;
+}
+
+/* */
+
+details {
+  position: relative;
+  box-sizing: border-box;
+  transition: box-shadow 0.1s ease-in-out;
+  display: flow-root;
+  padding: 30px 30px;
+  background: #222;
+  color: #fff;
+}
+
+details summary {
+  display: flow-root;
+  padding: 15px 30px;
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 20px;
+}
+/* Add margin if adjacent element */
+* + table {
+  margin-top: 20px;
+}
+
+table th {
+  padding: 16px 12px;
+  text-align: left;
+  vertical-align: bottom;
+  /* 1 */
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: #4f5a65;
+  text-transform: uppercase;
+}
+
+table td {
+  padding: 16px 12px;
+  vertical-align: top;
+  font-size: 1rem;
+}
+
+table td > :last-child {
+  margin-bottom: 0;
+}
+
+table tfoot {
+  font-size: 0.875rem;
+}
+
+table caption {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: left;
+  color: #4f5a65;
+  padding: 16px 12px;
+  text-transform: uppercase;
+}
+
+/* Style modifiers
+ ========================================================================== */
+/*
+ * Divider
+ */
+table > tr:not(:first-child),
+table > :not(:first-child) > tr,
+table > :first-child > tr:not(:first-child) {
+    border-top: 1px solid #e5e5e5;
+ }
+/*
+ * Hover
+ */
+table > tr:hover,
+table tbody tr:hover {
+  background: #ffd;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+  color: #666;
+}
+
+blockquote em {
+  margin-top: 10px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #666;
+  display: block;
+  text-align: right;
+}
+
+blockquote em::before {
+  content: "\A";
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.uk-light .uk-text-lead {
+  color: #91a6ba;
+}
+
+.uk-light {
+  color: #fff;
+}
+
+/* Accessibility Features */
+
+.skip-link {
+  background: #319795;
+  color: #fff;
+  font-weight: 700;
+  left: 50%;
+  padding: 4px;
+  position: absolute;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+}
+
+.skip-link:focus {
+  transform: translateY(0%);
+}
+
+.skip-link:focus-within {
+  transform: translateY(0%);
+}
+
+.uk-container {
+  background-color: #fff;
+  color: #000;
+}
+
+.uk-navbar-item {
+  color: #000
+}
+
+.uk-text-small {
+  font-size: 1rem;
+}
+
+.uk-button {
+  margin: 0;
+  border: 1px solid #e5e5e5
+  overflow: visible;
+  font: inherit;
+  color: inherit;
+  font-weight: bold;
+  text-transform: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 30px;
+  vertical-align: middle;
+  line-height: 38px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.1s ease-in-out;
+  transition-property: color, background-color, border-color;
+}
+
+figure {
+  box-sizing: border-box;
+  width: 100%;
+  flex: auto;
+  background: #fff;
+  color: #666;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 8%);
+  padding: 1em 1em;
+}
+
+figure img {
+  display: block;
+  margin: auto;
+}
+
+figcaption {
+  font-size: 80%;
+  line-height: 1.4;
+  color: #4f5a65;
+  text-align: center;
+  margin-top: 1em;
+}
+
+ /*
+   * Heading Sizes
+   */
+   h1,
+   .uk-h1 {
+     font-size: 2.23125rem;
+     line-height: 1.2;
+   }
+   h2,
+   .uk-h2 {
+    font-size: 2.23125rem;
+    line-height: 1.2;
+    border-bottom: 2px solid #333;
+    font-weight: bold;
+   }
+   h3,
+   .uk-h3 {
+    font-size: 1.7rem;
+    line-height: 1.3;
+    font-weight: bold;
+   }
+   h4,
+   .uk-h4 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    font-weight: bold;
+   }
+   h5,
+   .uk-h5 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    font-weight: bold;
+    margin-top: 1rem;;
+   }
+   h6,
+   .uk-h6 {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: bold;
+   }
+
+/* adds padding to prevent conflict with nav bar */
+
+:is(h2, h3) {
+  padding-top: 90px;
+  padding-bottom: 5px;
+}
+
+/* Code */
+
+pre {
+  -moz-tab-size: 4;
+  tab-size: 4;
+  overflow: auto;
+  padding: 1.5em;
+  background: #dadfe1;
+}
+
+code {
+  font-family: Consolas, monaco, monospace;
+  color: #3a539b;
+  padding: 2px 6px;
+  font-size: inherit;
+  font-weight: bold;
+}
+
+:not(pre) > code {
+    font-size: inherit;
+    color: #3a539b;
+    white-space: nowrap;
+    padding: 2px 6px;
+    background: #dadfe1;
+
+table code {
+  font-size: 1rem;
+}
+
+em {
+  color: #1b1b1b;
+}
+
+.aside {
+  position: relative;
+  margin: 1.5em;
+  padding: 15px 29px 15px 15px;
+  background: #f8f8f8;
+  color: #34515e;
+}
+
+.aside p {
+  font-size: smaller;
+}
+
+/* Add margin if adjacent element */
+* + .aside {
+  margin-top: 20px;
+}
+/*
+ * Remove margin from the last-child
+ */
+.aside > :last-child {
+  margin-bottom: 0;
+}
+
+ol, ul {
+  padding-left: 30px;
+  margin-top: 10px;
+  counter-reset: decimal;
+}
+
+ol li, ul li {
+  font-size: smaller;
+}
+
+section iframe {
+  display: block;
+  margin: auto;
+}
+
+#info .uk-description-list > dt {
+  color: #fff;
+}
+
+dl > dt:nth-child(n+2) {
+  margin-top: 20px;
+}
+
+dl > dt {
+  margin-left: 0;
+}
+
+dl > dt:nth-child(n+2) {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5;
+}
